@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/poppins/Poppins-SemiBold.ttf);
+}
+
+#header-logo{
+    width: 150px;
+    margin-left: 30px;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body{
+    font-family: Poppins;
+    font-size: 14pt;
+}
+
+#about-dropdown li a{
+    color: #0CC359;
+}
+
+#navbar-items li a{
+    color: white;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#navbar-items li a:hover{
+    color: #0CC359;
+}
+
+#join-btn {
+    background-color: #0CC359;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#join-btn:hover{
+    background-color: #14703b;
+}
