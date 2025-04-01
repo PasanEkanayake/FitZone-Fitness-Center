@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'PoppinsBL';
+    src: url(../fonts/poppins/Poppins-Black.ttf);
+}
+
+#home-section-1{
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    background-color: #0CC359;
+    font-family: 'PoppinsBL';
+    background-image: url(../images/pattern-bg-img.png);
+}
+
+#home-section-1 h1{
+    color: #fff;
+}
+
+#home-section-1 h4{
+    color: #10ff74;
+}
+
+body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-section-1-img{
+    width: 500px;
+}
+
+main{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#home-carousel-img{
+    height: 500px;
+}
+
+#home-join-btn {
+    background-color: #fff;
+    color: #0CC359;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+}
+
+#home-join-btn:hover{
+    background-color: #14703b;
+    color: #fff;
+}

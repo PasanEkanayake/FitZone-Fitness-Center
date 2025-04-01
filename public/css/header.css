@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'PoppinsSB';
     src: url(../fonts/poppins/Poppins-SemiBold.ttf);
 }
 
@@ -12,7 +12,7 @@
 }
 
 body{
-    font-family: Poppins;
+    font-family: 'PoppinsSB';
     font-size: 14pt;
 }
 
@@ -32,8 +32,17 @@ body{
 #join-btn {
     background-color: #0CC359;
     transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
 }
 
 #join-btn:hover{
     background-color: #14703b;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.navbar-toggler {
+    border-color: white !important;
 }

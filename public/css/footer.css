@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Poppins';
-    src: url(../fonts/poppins/Poppins.ttf);
+    font-family: 'PoppinsR';
+    src: url(../fonts/poppins/Poppins-Regular.ttf);
 }
 
 body{
-    font-family: Poppins;
+    font-family: 'PoppinsR';
     font-size: 14pt;
     display: flex;
     flex-direction: column;
