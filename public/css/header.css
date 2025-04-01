@@ -31,12 +31,14 @@ body{
 
 #join-btn {
     background-color: #0CC359;
+    color: #fff;
     transition: background-color 0.1s ease-in-out;
     border-radius: 250px;
 }
 
 #join-btn:hover{
-    background-color: #14703b;
+    background-color: #fff;
+    color: #0CC359;
 }
 
 .navbar-toggler-icon {

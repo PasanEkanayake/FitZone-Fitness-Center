@@ -23,7 +23,7 @@
                     <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item px-4">
-                    <a class="nav-link" href="#">Memberships</a>
+                    <a class="nav-link" href="#home-section-3">Memberships</a>
                   </li>
                   <li class="nav-item px-4">
                     <a class="nav-link" href="#">Blog</a>
@@ -50,7 +50,7 @@
                     <a class="nav-link" href="./pages/contact.html">Contact</a>
                   </li>
                 </ul>
-                <button class="btn text-white mx-4" type="button" id="join-btn">Join Now</button>
+                <button class="btn mx-4" type="button" id="join-btn">Join Now</button>
               </div>
             </div>
           </nav>
@@ -59,14 +59,14 @@
             <section id="home-section-1">
               <!-- <div class="container-fluid"> -->
                 <div class="raw m-0 p-0 g-0">
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-sm-12">
                     <div class="home-welcome-section">
                       <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
                       <h4>Your journey to fitness starts here!</h4>
                       <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/login.html'">Join Now</button>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-sm-12">
                     <div class="home-carousel-section">
                       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -85,6 +85,44 @@
                   </div>
                 </div>
               <!-- </div> -->
+            </section>
+            <section id="home-section-2">
+              <div class="search-bar">
+                <form class="d-flex" role="search" id="search-bar">
+                  <input class="form-control me-2 shadow-lg" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn shadow-lg" type="submit" id="search-btn">Search</button>
+                </form>
+              </div>
+            </section>
+            <section id="home-section-3">
+              <div class="section-titles">
+                <h3 class="display-4">Memberships</h3>
+              </div>
+              <div class="card-group m-5">
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                </div>
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                </div>
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                </div>
+              </div>
             </section>
         </div>
         <footer>
@@ -105,7 +143,7 @@
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="">Home</a></li>
-                            <li><a href="">Memberships</a></li>
+                            <li><a href="#home-section-3">Memberships</a></li>
                             <li><a href="">Services</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="">Contacts</a></li>

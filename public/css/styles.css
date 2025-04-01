@@ -7,22 +7,25 @@
     display: flex;
     position: relative;
     flex-grow: 1;
-    background-color: #0CC359;
+    /* background-color: #0CC359; */
     font-family: 'PoppinsBL';
     background-image: url(../images/pattern-bg-img.png);
+    overflow: hidden;
 }
 
 #home-section-1 h1{
-    color: #fff;
+    color: #0CC359;
 }
 
-/* #home-section-1 h4{
-    color: #10ff74;
-} */
+#home-section-1 h4{
+    color: #fff;
+}
 
 body{
     display: flex;
     justify-content: space-between;
+    background-image: url(../images/home-carousel-img3.jpg);
+    background-attachment: fixed;
 }
 
 /* .home-section-1-img{
@@ -46,16 +49,17 @@ main{
     width: 200px;
     height: 50px;
     margin-top: 50px;
-    background-color: #fff;
-    color: #0CC359;
+    margin-bottom: 50px;
+    background-color: #0CC359;
+    color: #fff;
     transition: background-color 0.1s ease-in-out;
     border-radius: 250px;
     font-size: 16pt;
 }
 
 #home-join-btn:hover{
-    background-color: #14703b;
-    color: #fff;
+    background-color: #fff;
+    color: #0CC359;
 }
 
 .home-welcome-section{
@@ -63,4 +67,54 @@ main{
     padding-top: 200px;
     padding-right: 30px;
     padding-left: 20px;
+}
+
+.section-titles{
+    text-align: center;
+    margin: 100px 0;
+}
+
+#home-section-2{
+    background-color: #14703b;
+    font-family: 'PoppinsSB';
+    background-image: url(../images/pattern-bg-img.png);
+    overflow: hidden;
+}
+
+.search-bar{
+    margin: 100px;
+}
+
+#search-bar input{
+    height: 70px;
+    border-radius: 50px;
+    /* box-shadow: #000; */
+}
+
+#search-bar button{
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+#search-btn{
+    background-color: #0CC359;
+    color: #fff;
+    font-size: 18pt;
+}
+
+#search-btn:hover{
+    background-color: #000000;
+    color: #0CC359;
+}
+
+#home-section-3{
+    background-color: #0CC359;
+    font-family: 'PoppinsSB';
+    background-image: url(../images/pattern-bg-img.png);
+    overflow: hidden;
+}
+
+#home-section-3 h3{
+    color: #fff;
 }
