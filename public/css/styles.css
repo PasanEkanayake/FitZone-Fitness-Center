@@ -81,19 +81,20 @@ main{
     font-family: 'PoppinsSB';
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
+    padding: 50px 0;
 }
 
 .search-bar{
-    margin: 100px;
+    margin: 20px;
 }
 
-#search-bar input{
+.search-bar input{
     height: 70px;
     border-radius: 50px;
     /* box-shadow: #000; */
 }
 
-#search-bar button{
+.search-bar button{
     width: 200px;
     height: 70px;
     border-radius: 50px;
@@ -131,7 +132,7 @@ main{
     /* background-color: #0CC359; */
     font-family: 'PoppinsBL';
     background-image: url(../images/pattern-bg-img.png);
-    overflow: hidden;
+    overflow: auto;
 }
 
 #home-section-5 h1{
