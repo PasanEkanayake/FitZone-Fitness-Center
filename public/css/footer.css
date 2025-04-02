@@ -21,11 +21,17 @@ footer{
     bottom: 0;
     background: linear-gradient(to right, #121212, #121212, #14703b);
     color: white;
-    padding: 100px 0 30px;
+    padding-bottom: 10px;
+    padding-top: 50px;
     border-top-left-radius: 125px;
     font-size: 13px;
     line-height: 20px;
     flex-grow: 1;
+}
+
+#footer{
+    background-color: #14703b;
+    background-image: url(../images/pattern-bg-img.png);
 }
 
 .raw{

@@ -3,6 +3,11 @@
     src: url(../fonts/poppins/Poppins-Black.ttf);
 }
 
+@font-face {
+    font-family: 'PoppinsSB';
+    src: url(../fonts/poppins/Poppins-SemiBold.ttf);
+}
+
 #home-section-1{
     display: flex;
     position: relative;
@@ -23,9 +28,10 @@
 
 body{
     display: flex;
-    justify-content: space-between;
-    background-image: url(../images/home-carousel-img3.jpg);
+    /* justify-content: space-between; */
+    background-image: url(../images/bg-img2.jpg);
     background-attachment: fixed;
+    background-position: center;
 }
 
 /* .home-section-1-img{
@@ -119,7 +125,7 @@ main{
 }
 
 #home-section-4{
-    background-color: #0CC359;
+    background-color: #14703b;
     font-family: 'PoppinsSB';
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
@@ -166,3 +172,20 @@ main{
     background-color: #fff;
     color: #0CC359;
 }
+
+#home-section-6{
+    background-color: #14703b;
+    font-family: 'PoppinsSB';
+    background-image: url(../images/pattern-bg-img.png);
+    overflow: hidden;
+}
+
+nav{
+    font-family: 'PoppinsSB';
+    font-size: 14pt;
+    font-weight: 900;
+}
+
+/* #membership-plans{
+    align-items: center;
+} */

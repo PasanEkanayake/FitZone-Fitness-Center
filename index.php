@@ -13,14 +13,14 @@
         <header>
           <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
             <div class="container-fluid">
-              <a href="./index.html"><img src="./public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
+              <a href="./index.php"><img src="./public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-items">
                   <li class="nav-item px-4">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
                   </li>
                   <li class="nav-item px-4">
                     <a class="nav-link" href="#home-section-3">Memberships</a>
@@ -50,9 +50,10 @@
                     <a class="nav-link" href="#footer">Contact</a>
                   </li>
                 </ul>
-                
               </div>
-              <button class="btn mx-4" type="button" id="join-btn">Join Now</button>
+              <div>
+                <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='../pages/login.html'">Join Now</button>
+              </div>
             </div>
           </nav>
         </header>
@@ -107,38 +108,29 @@
               <div class="section-titles">
                 <h3 class="display-4">Membership Plans</h3>
               </div>
-              <div class="container">
-                <div class="raw" id="membership-plans">
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Basic Plan (Bronze) - $20/month</h5>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
-                    </div>
+              <div class="card-group m-5">
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   </div>
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Standard Plan (Silver) - $40/month</h5>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
-                    </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                </div>
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
                   </div>
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Premium Plan (Gold) - $70/month</h5>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
-                    </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                </div>
+                <div class="card m-3">
+                  <h5 class="card-header">Featured</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                   </div>
+                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
                 </div>
               </div>
             </section>
@@ -191,7 +183,7 @@
                   <div class="col-md-6 col-sm-12">
                     <div class="home-blog-section">
                       <h1 class="display-4">Are you<br> new to the GYM life?</h1>
-                      <h4>Worry not, We are fully prepared to guide you throughout the process. <br>We also have a dedicated blog to bring latest updates
+                      <h4>Worry not, We are fully prepared to guide you throughout the process. We have a dedicated blog to bring latest updates
                         in the blink of an eye.</h4>
                       <button class="btn mx-4" type="button" id="home-blog-btn" onclick="location.href='./pages/login.html'">Checkout our blog Now</button>
                     </div>
@@ -199,7 +191,7 @@
                 </div>
               <!-- </div> -->
             </section>
-            <section id="home-section-6">
+            <section id="home-section-3">
               <div class="section-titles">
                 <h3 class="display-4">Member Feedbacks</h3>
               </div>
@@ -230,12 +222,11 @@
               </div>
             </section>
         </div>
-        <div id="footer">
-          <footer>
+        <footer id="footer">
             <div class="container-fluid">
                 <div class="raw">
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
-                        <a href="./index.html"><img src="./public/images/logo.png" class="footer-logo"></a>
+                        <a href="./index.php"><img src="./public/images/logo.png" class="footer-logo"></a>
                         <p>FitZone Fitness Center is your ultimate fitness destination, offering top-tier equipment, expert trainers, and a supportive community. Whether you're a beginner or a pro, we’re here to help you reach your goals. 💪🔥 #StrongerEveryDay</p>
                         <div>
                             <a href="https://web.facebook.com/"><img src="./public/images/facebook.png" class="social-icons"></a>
@@ -248,7 +239,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
                         <h3>Quick Links <div class="underline"><span></span></div></h3>
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./index.php">Home</a></li>
                             <li><a href="#home-section-3">Memberships</a></li>
                             <li><a href="./pages/services.html">Services</a></li>
                             <li><a href="./pages/about.html">About</a></li>
@@ -271,7 +262,6 @@
             </div>
             <hr>
             <p class="copyright">&copy; FitZone Fitness Center. All Right Reserved. Developed By <a href="https://www.linkedin.com/in/pasanekanayake/">Pasan Ekanayake</a></p>
-          </footer>
-        </div>
+        </footer>
     </body>
 </html>

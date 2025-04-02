@@ -11,9 +11,10 @@
     margin-bottom: 10px;
 }
 
-body{
-    font-family: 'PoppinsSB';
+nav{
+    font-family: monospace;
     font-size: 14pt;
+    font-weight: 900;
 }
 
 #about-dropdown li a{
