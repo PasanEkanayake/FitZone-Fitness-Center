@@ -186,6 +186,87 @@ nav{
     font-weight: 900;
 }
 
-/* #membership-plans{
+#membership-title{
+    color: #0CC359;
+}
+
+#membership-plans{
     align-items: center;
-} */
+    padding-bottom: 100px;
+}
+
+#membership-plans .card h4{
+    /* color: #fff; */
+    font-family: 'PoppinsSB';
+}
+
+#membership-plans .card h5, p{
+    /* color: #fff; */
+    font-family: 'PoppinsR';
+    font-size: 12pt;
+    padding: 10px;
+}
+
+#plan-bronze{
+    background-color: #CD7F32;
+    font-family: 'PoppinsR';
+    height: 600px;
+    border-radius: 30px;
+}
+
+#plan-silver{
+    background-color: #C0C0C0;
+    font-family: 'PoppinsR';
+    height: 600px;
+    border-radius: 30px;
+}
+
+#plan-gold{
+    background-color: #FFD700;
+    font-family: 'PoppinsR';
+    height: 600px;
+    border-radius: 30px;
+}
+
+#plan-subscribe-btn{
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    background-color: #0CC359;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+    font-size: 16pt;
+}
+
+#plan-subscribe-btn:hover{
+    background-color: #fff;
+    color: #0CC359;
+}
+
+#bmi-calc div input{
+    width: 400px;
+    height: 100px;
+    border-radius: 25px;
+    padding: 30px;
+    margin: 10PX;
+    border: none;
+}
+
+#bmi-calc div button{
+    width: 100%;
+    height: 50px;
+    margin-top: 80px;
+    background-color: #0CC359;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+    font-size: 16pt;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#bmi-calc div button:hover{
+    background-color: #fff;
+    color: #0CC359;
+}

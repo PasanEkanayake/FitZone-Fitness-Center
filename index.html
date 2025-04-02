@@ -105,38 +105,52 @@
             </section>
             <section id="home-section-3">
               <div class="section-titles">
-                <h3 class="display-4">Membership Plans</h3>
+                <h3 class="display-4" id="membership-title">Membership Plans</h3>
               </div>
               <div class="container">
                 <div class="raw" id="membership-plans">
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Basic Plan (Bronze) - $20/month</h5>
+                  <div class="col-md-4">
+                    <div class="card m-3" id="plan-bronze">
+                      <h4 class="card-header">Basic Plan (Bronze) - $20/month</h5>
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-bg-success">Access to gym facilities (machines & weights)</h5>
+                        <h5 class="card-title text-bg-success">Unlimited cardio access</h5>
+                        <h5 class="card-title text-bg-success">Locker room access</h5>
+                        <h5 class="card-title text-bg-success">Free WiFi</h5>
+                        <h5 class="card-title text-bg-danger">No personal training</h5>
+                        <h5 class="card-title text-bg-danger">No group classes</h5>
+                        <p class="card-text text-bg-light"><b>Best for:</b> Beginners or casual gym-goers who want to work out independently.</p>
                       </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Standard Plan (Silver) - $40/month</h5>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                  <div class="col-md-4">
+                    <div class="card m-3" id="plan-silver">
+                      <h4 class="card-header">Standard Plan (Silver) - $40/month</h5>
+                        <div class="card-body">
+                          <h5 class="card-title text-bg-success">Everything in Basic Plan</h5>
+                          <h5 class="card-title text-bg-success">Access to all group classes (Yoga, Zumba, HIIT, etc.)</h5>
+                          <h5 class="card-title text-bg-success">Monthly fitness assessment</h5>
+                          <h5 class="card-title text-bg-success">1 free personal training session per month</h5>
+                          <h5 class="card-title text-bg-success">Nutritional guidance</h5>
+                          <p class="card-text text-bg-light"><b>Best for:</b> Individuals looking for structured workouts and occasional trainer support.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card m-3">
-                      <h5 class="card-header">Premium Plan (Gold) - $70/month</h5>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                  <div class="col-md-4">
+                    <div class="card m-3" id="plan-gold">
+                      <h4 class="card-header">Premium Plan (Gold) - $70/month</h5>
+                        <div class="card-body">
+                          <h5 class="card-title text-bg-success">Everything in Standard Plan</h5>
+                          <h5 class="card-title text-bg-success">Unlimited personal training sessions</h5>
+                          <h5 class="card-title text-bg-success">Customized diet & workout plans</h5>
+                          <h5 class="card-title text-bg-success">Sauna & spa access</h5>
+                          <h5 class="card-title text-bg-success">Priority booking for classes</h5>
+                          <h5 class="card-title text-bg-success">Exclusive gym events & workshops</h5>
+                          <p class="card-text text-bg-light"><b>Best for:</b> Serious fitness enthusiasts who want full support and premium facilities.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
                     </div>
                   </div>
                 </div>
@@ -146,23 +160,20 @@
               <div class="section-titles">
                 <h3 class="display-4">What is your BMI?</h3>
               </div>
-              <div class="container">
-                <div class="raw">
-                  <div class="col-3">
-                    <label for="height">Your Height</label>
-                    <input type="text" id="height" name="height" placeholder="Height" required>
+              <div class="container-fluid">
+                <div class="raw px-5" id="bmi-calc">
+                  <div class="col-5 text-center">
+                    <!-- <label for="height">Your Height</label> -->
+                    <input type="text" id="height" name="height" placeholder="Height in centimeters (cm)" required>
+                    <input type="text" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
                   </div>
-                  <div class="col-3">
-                    <label for="weight">Your Weight</label>
-                    <input type="text" id="weight" name="weight" placeholder="Weight" required>
+                  <div class="col-2 text-center">
+                    <button type="button">Check BMI</button>
                   </div>
-                  <div class="col-1">
-                    <h2>=</h2>
-                  </div>
-                  <div class="col-5">
-                    <label for="bmi">Your BMI</label>
-                    <input type="text" id="bmi" name="bmi" placeholder="BMI" required>
-                    <label for="bmi-condition">Condition</label>
+                  <div class="col-5 text-center">
+                    <!-- <label for="bmi">Your BMI</label> -->
+                    <input type="text" id="bmi" name="bmi" placeholder="BMI" required><br>
+                    <!-- <label for="bmi-condition">Condition</label> -->
                     <input type="text" id="bmi-condition" name="bmi-condition" placeholder="Condition" required>
                   </div>
                 </div>
