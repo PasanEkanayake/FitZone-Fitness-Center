@@ -279,3 +279,7 @@ nav{
     height: 250px;
     border-radius: 30px;
 }
+
+.img-fluid{
+    width: 500px;
+}
