@@ -108,7 +108,7 @@
                 <h3 class="display-4" id="membership-title">Membership Plans</h3>
               </div>
               <div class="container">
-                <div class="raw" id="membership-plans">
+                <div class="raw m-0" id="membership-plans">
                   <div class="col-md-4">
                     <div class="card m-3" id="plan-bronze">
                       <h4 class="card-header">Basic Plan (Bronze) - $20/month</h5>
@@ -161,16 +161,16 @@
                 <h3 class="display-4">What is your BMI?</h3>
               </div>
               <div class="container-fluid">
-                <div class="raw px-5" id="bmi-calc">
-                  <div class="col-5 text-center">
+                <div class="raw m-0 px-5" id="bmi-calc">
+                  <div class="col-md-5 text-center">
                     <!-- <label for="height">Your Height</label> -->
                     <input type="text" id="height" name="height" placeholder="Height in centimeters (cm)" required>
                     <input type="text" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
                   </div>
-                  <div class="col-2 text-center">
+                  <div class="col-md-2 text-center">
                     <button type="button">Check BMI</button>
                   </div>
-                  <div class="col-5 text-center">
+                  <div class="col-md-5 text-center">
                     <!-- <label for="bmi">Your BMI</label> -->
                     <input type="text" id="bmi" name="bmi" placeholder="BMI" required><br>
                     <!-- <label for="bmi-condition">Condition</label> -->
@@ -214,29 +214,40 @@
               <div class="section-titles">
                 <h3 class="display-4">Member Feedbacks</h3>
               </div>
-              <div class="card-group m-5">
-                <div class="card m-3">
-                  <h5 class="card-header">Featured</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="container">
+                <div class="raw m-0" id="membership-plans">
+                  <div class="col-md-3">
+                    <div class="card m-3" id="feedback-card">
+                      <div class="card-body">
+                        <p class="card-text text-bg-light">"FitZone has completely transformed my fitness journey!
+                           The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
-                </div>
-                <div class="card m-3">
-                  <h5 class="card-header">Featured</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <div class="col-md-3">
+                    <div class="card m-3" id="feedback-card">
+                        <div class="card-body">
+                          <p class="card-text text-bg-light">"The personal training sessions are worth every penny! 
+                            My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</p>
+                        </div>
+                    </div>
                   </div>
-                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
-                </div>
-                <div class="card m-3">
-                  <h5 class="card-header">Featured</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <div class="col-md-3">
+                    <div class="card m-3" id="feedback-card">
+                        <div class="card-body">
+                          <p class="card-text text-bg-light">"Great gym with top-notch equipment. The staff is friendly, and the facility is 
+                            always clean. Perfect for those who want a no-fuss, independent workout space."</p>
+                        </div>
+                    </div>
                   </div>
-                  <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Go somewhere</a></div>
+                  <div class="col-md-3">
+                    <div class="card m-3" id="feedback-card">
+                        <div class="card-body">
+                          <p class="card-text text-bg-light">"I love the balance of group classes and personal training in my plan. 
+                            The trainers push me to do my best, and I've seen amazing results in just three months!"</p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -245,9 +256,11 @@
           <footer>
             <div class="container-fluid">
                 <div class="raw">
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
+                    <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                         <a href="./index.html"><img src="./public/images/logo.png" class="footer-logo"></a>
-                        <p>FitZone Fitness Center is your ultimate fitness destination, offering top-tier equipment, expert trainers, and a supportive community. Whether you're a beginner or a pro, we’re here to help you reach your goals. 💪🔥 #StrongerEveryDay</p>
+                        <p>FitZone Fitness Center is your ultimate fitness destination, offering top-tier equipment, expert trainers, and a 
+                          supportive community. Whether you're a beginner or a pro, we’re here to help you reach your goals. 
+                          💪🔥 #StrongerEveryDay</p>
                         <div>
                             <a href="https://web.facebook.com/"><img src="./public/images/facebook.png" class="social-icons"></a>
                             <a href="https://www.instagram.com/"><img src="./public/images/instagram.png" class="social-icons"></a>
@@ -256,7 +269,7 @@
                             <a href="https://www.youtube.com/"><img src="./public/images/youtube.png" class="social-icons"></a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
+                    <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                         <h3>Quick Links <div class="underline"><span></span></div></h3>
                         <ul>
                             <li><a href="./index.html">Home</a></li>
@@ -265,7 +278,7 @@
                             <li><a href="./pages/about.html">About</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
+                    <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                         <h3>Contact Us <div class="underline"><span></span></div></h3>
                         <p>No.100,</p>
                         <p>Bauddhaloka Temple,</p>
@@ -274,7 +287,7 @@
                         <p class="email-id">pasanekanayake@gmail.com</p>
                         <h5>+94 711149262</h4>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" id="section">
+                    <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                         <h3>Location <div class="underline"><span></span></div></h3>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1398.5848059336454!2d80.36256596971003!3d7.487851722647029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3398ab06be8b9%3A0x1f90e4e71e885052!2sKurunegala!5e0!3m2!1sen!2slk!4v1743409101671!5m2!1sen!2slk" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
