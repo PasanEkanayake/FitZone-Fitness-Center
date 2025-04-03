@@ -10,12 +10,10 @@
 }
 
 body{
-    /* font-family: 'PoppinsR'; */
     font-size: 14pt;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* overflow: hidden; */
 }
 
 main{

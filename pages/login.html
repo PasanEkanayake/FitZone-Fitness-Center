@@ -7,8 +7,8 @@
         <!-- <link rel="stylesheet" type="text/css" href="../public/css/styles.css"> -->
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="../public/css/login.css">
-        <script language="javascript" type="text/javascript" src="../public/js/scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="./login.css">
+        <script src="./login.js"></script>
     </head>
     <body>
         <header>
@@ -59,22 +59,34 @@
         </header>
         <main>
             <div class="main">
-              <div class="container">
-                <div class="raw m-0">
-                  <div class="col-md-6">
-                    <img src="../public/images/login-bg.jpeg" alt="" class="login-image">
-                  </div>
-                  <div class="col-md-6">
-                    <form action="login.php" class="login-form">
-                      <h1>Login</h1><br><br><br>
-                      <label for="username">Username</label>
-                      <input type="text" id="username" name="user"><br><br>
-                      <label for="password">Password</label>
-                      <input type="password" id="password" name="pass"><br><br>
-                      <button type="submit">Login</button>
-                      <p>Not registered yet? <a href="register.html">Sign Up now</a></p>
-                    </form>
-                  </div>
+              <!-- <div class="raw m-0 d-flex justify-content-lg-end justify-content-md-center justify-content-sm-center p-lg-5 p-md-0 p-sm-0" id="login-section">
+                <form action="login.php" class="login-form">
+                  <h1>Login</h1><br><br>
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="user"><br>
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="pass"><br>
+                  <button type="submit" class="btn">Login</button>
+                  <p>Not registered yet? <a href="register.html">Sign Up now</a></p>
+                </form>
+              </div> -->
+              <div class="raw m-0" id="login-section">
+                <div class="col-md-6">
+                  <p class="login-text">adkfa ajkav ajfafm vsdvlnsv svmslkv SVKLSN VSVSV SV SKLSNKSL SV SDLKV SV,MS VLKS VS, VSV SMVS</p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                  <form action="login.php" class="login-form">
+                    <h1>Login</h1><br><br>
+                    <div class="username-input-box">
+                      <input type="text" id="username" name="user" placeholder="Enter Username">
+                    </div>
+                    <div class="password-input-box">
+                      <input type="password" id="password" name="pass" placeholder="Enter Password">
+                      <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <p>Not registered yet? <a href="register.html">Register now</a></p>
+                  </form>
                 </div>
               </div>
             </div>
