@@ -25,7 +25,7 @@
 
     // Check if the user is a registered memeber
     if($result->num_rows == 1){
-        echo "<script>window.location.href='../index.php';</script>";
+        echo "<script>alert('You have successfully logged in.'); window.location.href='../index.php';</script>";
     }else{
         echo "Invalid username or password.";
     }
