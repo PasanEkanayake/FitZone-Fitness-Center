@@ -9,7 +9,7 @@
 }
 
 main{
-    background-image: url(../public/images/login-bg.jpeg);
+    background-image: url(../public/images/resgister-bg.png);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -44,7 +44,7 @@ nav{
     padding: 30px 20px;
 }
 
-.login-form{
+.register-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,16 +57,76 @@ nav{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.login-form h1{
+.register-form h1{
     font-size: 36pt;
     font-weight: 700;
     color: #0CC359;
 }
 
-.login-form label{
-    font-size: 20pt;
+.register-form label{
+    font-size: 12pt;
     font-weight: 500;
     color: #0CC359;
+}
+
+.name-input-box{
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
+
+.name-input-box input{
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.email-input-box input{
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.email-input-box{
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
+
+.measurement-input-box{
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
+
+.measurement-input-box input{
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #555;
 }
 
 .username-input-box{
@@ -75,17 +135,17 @@ nav{
     max-width: 500px;
     border-radius: 25px;
     padding: 10px 20px;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     align-items: center;
 }
 
 .username-input-box input{
     width: 100%;
-    padding: 10px 0;
+    padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 24px;
+    font-size: 18px;
     color: #555;
 }
 
@@ -95,17 +155,17 @@ nav{
     max-width: 500px;
     border-radius: 25px;
     padding: 10px 20px;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     align-items: center;
 }
 
 .password-input-box input{
     width: 100%;
-    padding: 10px 0;
+    padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 24px;
+    font-size: 18px;
     color: #555;
 }
 
@@ -115,14 +175,14 @@ nav{
     cursor: pointer;
 }
 
-.login-form p{
+.register-form p{
     font-size: 16pt;
     font-weight: 300;
     color: #000000;
     margin-top: 30px;
 }
 
-.login-form p a{
+.register-form p a{
     font-size: 16pt;
     font-weight: 300;
 }
