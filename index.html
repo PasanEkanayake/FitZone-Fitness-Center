@@ -7,7 +7,9 @@
         <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
         <link rel="stylesheet" type="text/css" href="./public/css/header.css">
         <link rel="stylesheet" type="text/css" href="./public/css/footer.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
         <script language="javascript" type="text/javascript" src="./public/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
     <body>
         <header>
@@ -105,7 +107,7 @@
             </section>
             <section id="home-section-3">
               <div class="section-titles">
-                <h3 class="display-4" id="membership-title">Membership Plans</h3>
+                <h3 class="display-4" id="membership-title">Membership Plans <div class="section-underline"><span></span></h3>
               </div>
               <div class="container">
                 <div class="raw m-0" id="membership-plans">
@@ -158,7 +160,7 @@
             </section>
             <section id="home-section-4">
               <div class="section-titles">
-                <h3 class="display-4">What is your BMI?</h3>
+                <h3 class="display-4">What is your BMI? <div class="section-underline"><span></span></h3>
               </div>
               <div class="container-fluid">
                 <div class="raw m-0 px-5" id="bmi-calc">
@@ -231,9 +233,9 @@
             </section>
             <section id="home-section-6">
               <div class="section-titles">
-                <h3 class="display-4">Member Feedbacks</h3>
+                <h3 class="display-4">Member Testimonies <div class="section-underline"><span></span></div></h3>
               </div>
-              <div class="container">
+              <!-- <div class="container">
                 <div class="raw m-0" id="membership-plans">
                   <div class="col-md-3">
                     <div class="card m-3" id="feedback-card">
@@ -268,6 +270,86 @@
                     </div>
                   </div>
                 </div>
+              </div> -->
+              <!-- <div class="section-content">
+                <div class="slider-container swiper">
+                  <div class="slider-wrapper">
+                    <ul class="testimonies-list swiper-wrapper">
+                      <li class="testimonial swiper-slide">
+                        <img src="./public/images/home-carousel-img1.jpg" alt="User" class="user-img">
+                        <h3 class="name">Sarah Johnson</h3>
+                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                      </li>
+                      <li class="testimonial swiper-slide">
+                        <img src="./public/images/home-carousel-img2.jpg" alt="User" class="user-img">
+                        <h3 class="name">Sarah Johnson</h3>
+                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                      </li>
+                      <li class="testimonial swiper-slide">
+                        <img src="./public/images/home-carousel-img3.jpg" alt="User" class="user-img">
+                        <h3 class="name">Sarah Johnson</h3>
+                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                      </li>
+                      <li class="testimonial swiper-slide">
+                        <img src="./public/images/home-carousel-img1.jpg" alt="User" class="user-img">
+                        <h3 class="name">Sarah Johnson</h3>
+                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                      </li>
+                      <li class="testimonial swiper-slide">
+                        <img src="./public/images/home-carousel-img3.jpg" alt="User" class="user-img">
+                        <h3 class="name">Sarah Johnson</h3>
+                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div> -->
+              <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner" style="padding-bottom: 50px;">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="./public/images/home-carousel-img3.jpg" alt="User" class="user-img">
+                    <h3 class="name">John D. (Silver Plan Member)</h3>
+                    <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated,<br> and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./public/images/bg-img2.jpg" alt="User" class="user-img">
+                    <h3 class="name">David M. (Gold Plan Member)</h3>
+                    <i class="feedback">"FitZone is hands down the best gym in town! The personal trainers are knowledgeable,<br> and the customized workout plans have helped me build strength and endurance."</i>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./public/images/home-carousel-img1.jpg" alt="User" class="user-img">
+                    <h3 class="name">Sarah L. (Gold Plan Member)</h3>
+                    <i class="feedback">"The personal training sessions are worth every penny!<br> My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</i>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./public/images/bg-img2.jpg" alt="User" class="user-img">
+                    <h3 class="name">Michael R. (Basic Plan Member)</h3>
+                    <i class="feedback">"Great gym with top-notch equipment. The staff is friendly, and the facility is always clean.<br> Perfect for those who want a no-fuss, independent workout space."</i>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./public/images/home-carousel-img2.jpg" alt="User" class="user-img">
+                    <h3 class="name">Emily K. (Silver Plan Member)</h3>
+                    <i class="feedback">"I love the balance of group classes and personal training in my plan.<br> The trainers push me to do my best, and I’ve seen amazing results in just three months!"</i>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
             </section>
         </div>

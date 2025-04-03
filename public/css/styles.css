@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'PoppinsBL';
     src: url(../fonts/poppins/Poppins-Black.ttf);
 }
@@ -6,14 +6,21 @@
 @font-face {
     font-family: 'PoppinsSB';
     src: url(../fonts/poppins/Poppins-SemiBold.ttf);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Poppins";
 }
 
 #home-section-1{
+    font-weight: 600;
     display: flex;
     position: relative;
     flex-grow: 1;
     /* background-color: #0CC359; */
-    font-family: 'PoppinsBL';
+    /* font-family: 'PoppinsBL'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
 }
@@ -32,6 +39,7 @@ body{
     background-image: url(../images/bg-img2.jpg);
     background-attachment: fixed;
     background-position: center;
+    object-fit: cover;
     overflow-x: hidden;
 }
 
@@ -77,15 +85,42 @@ body{
 }
 
 .section-titles{
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin: 100px 0;
     color: #fff;
-    font-family: 'PoppinsSB';
+    align-items: center;
+    /* font-family: 'PoppinsSB'; */
+}
+
+.section-underline{
+    width: 100%;
+    height: 10px;
+    background: #767676;
+    border-radius: 3px;
+    position: sticky;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.section-underline span{
+    width: 20px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
 }
 
 #home-section-2{
     background-color: #14703b;
-    font-family: 'PoppinsSB';
+    /* font-family: 'PoppinsSB'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
     padding: 50px 0;
@@ -120,14 +155,14 @@ body{
 
 #home-section-3{
     /* background-color: #0CC359; */
-    font-family: 'PoppinsSB';
+    /* font-family: 'PoppinsSB'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
 }
 
 #home-section-4{
     background-color: #14703b;
-    font-family: 'PoppinsSB';
+    /* font-family: 'PoppinsSB'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
     padding-bottom: 100px;
@@ -138,7 +173,7 @@ body{
     position: relative;
     flex-grow: 1;
     /* background-color: #0CC359; */
-    font-family: 'PoppinsBL';
+    /* font-family: 'PoppinsBL'; */
     background-image: url(../images/pattern-bg-img.png);
 }
 
@@ -176,15 +211,15 @@ body{
 
 #home-section-6{
     background-color: #14703b;
-    font-family: 'PoppinsSB';
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
+    padding-bottom: 50px;
 }
 
 nav{
-    font-family: 'PoppinsSB';
+    /* font-family: 'PoppinsSB'; */
     font-size: 14pt;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 #membership-title{
@@ -196,35 +231,35 @@ nav{
     padding-bottom: 100px;
 }
 
-#membership-plans .card h4{
-    /* color: #fff; */
+/* #membership-plans .card h4{
+    color: #fff;
     font-family: 'PoppinsSB';
-}
+} */
 
 #membership-plans .card h5, p{
     /* color: #fff; */
-    font-family: 'PoppinsR';
+    /* font-family: 'PoppinsR'; */
     font-size: 12pt;
     padding: 10px;
 }
 
 #plan-bronze{
     background-color: #CD7F32;
-    font-family: 'PoppinsR';
+    /* font-family: 'PoppinsR'; */
     height: 600px;
     border-radius: 30px;
 }
 
 #plan-silver{
     background-color: #C0C0C0;
-    font-family: 'PoppinsR';
+    /* font-family: 'PoppinsR'; */
     height: 600px;
     border-radius: 30px;
 }
 
 #plan-gold{
     background-color: #FFD700;
-    font-family: 'PoppinsR';
+    /* font-family: 'PoppinsR'; */
     height: 600px;
     border-radius: 30px;
 }
@@ -275,11 +310,36 @@ nav{
 
 #feedback-card{
     background-color: #fff;
-    font-family: 'PoppinsR';
+    /* font-family: 'PoppinsR'; */
     height: 250px;
     border-radius: 30px;
 }
 
 .img-fluid{
     width: 500px;
+}
+
+#carouselExampleDark{
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.user-img{
+    width: 180px;
+    height: 180px;
+    margin-bottom: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.feedback{
+    text-align: center;
+}
+
+.name{
+    padding-bottom: 20px;
 }
