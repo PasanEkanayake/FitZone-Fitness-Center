@@ -15,7 +15,6 @@
 }
 
 #home-section-1{
-    font-weight: 600;
     display: flex;
     position: relative;
     flex-grow: 1;
@@ -26,6 +25,7 @@
 }
 
 #home-section-1 h1{
+    font-weight: 700;
     color: #0CC359;
 }
 
@@ -39,7 +39,8 @@ body{
     background-image: url(../images/bg-img2.jpg);
     background-attachment: fixed;
     background-position: center;
-    object-fit: cover;
+    background-size: cover;
+    object-fit: contain;
     overflow-x: hidden;
 }
 
@@ -85,6 +86,7 @@ body{
 }
 
 .section-titles{
+    font-weight: 700;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -92,6 +94,10 @@ body{
     color: #fff;
     align-items: center;
     /* font-family: 'PoppinsSB'; */
+}
+
+.section-titles h3{
+    font-weight: 600;
 }
 
 .section-underline{
@@ -306,6 +312,11 @@ nav{
 #bmi-calc div button:hover{
     background-color: #fff;
     color: #0CC359;
+}
+
+#bmi-result, #bmi-condition{
+    font-weight: 700;
+    font-size: 20pt;
 }
 
 #feedback-card{
