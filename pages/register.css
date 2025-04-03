@@ -202,3 +202,20 @@ nav{
     background-color: #000000;
     color: #fff;
 }
+
+#home-join-btn {
+    width: 250px;
+    height: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #0CC359;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+    font-size: 20pt;
+}
+
+#home-join-btn:hover{
+    background-color: #fff;
+    color: #0CC359;
+}

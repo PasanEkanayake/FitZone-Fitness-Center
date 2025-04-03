@@ -66,13 +66,13 @@
                   </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
-                  <form action="login.php" class="login-form">
+                  <form action="./login.php" method="post" class="login-form">
                     <h1>Login</h1><br><br>
                     <div class="username-input-box">
-                      <input type="text" id="username" name="user" placeholder="Enter Username">
+                      <input type="text" id="username" name="username" placeholder="Enter Username">
                     </div>
                     <div class="password-input-box">
-                      <input type="password" id="password" name="pass" placeholder="Enter Password">
+                      <input type="password" id="password" name="password" placeholder="Enter Password">
                       <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
                     </div>
                     <button type="submit" class="btn">Login</button>
