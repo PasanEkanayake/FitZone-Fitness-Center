@@ -60,7 +60,8 @@
                 <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
                 <a href="logout.php"><button>Logout</button></a>
               <?php else: ?>
-              <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button>
+              <!-- <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button> -->
+              <button class="btn mx-4" type="button" id="logout-btn" onclick="location.href='./index.html'">Logout</button>
               <?php endif; ?>
             </div>
           </nav>
@@ -73,7 +74,7 @@
                     <div class="home-welcome-section">
                       <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
                       <h4>Your journey to fitness starts here!</h4>
-                      <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
+                      <!-- <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button> -->
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-12">

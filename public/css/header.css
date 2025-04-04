@@ -48,6 +48,18 @@
     color: #0CC359;
 }
 
+#logout-btn{
+    background-color: #ff0000;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+}
+
+#logout-btn:hover{
+    background-color: #fff;
+    color: #0CC359;
+}
+
 .navbar-toggler-icon {
     filter: invert(100%);
 }

@@ -27,7 +27,7 @@
     if($result->num_rows == 1){
         echo "<script>alert('You have successfully logged in.'); window.location.href='../index.php';</script>";
     }else{
-        echo "Invalid username or password.";
+        echo "<script>alert('Username or Password is incorrect! Try again.'); window.history.back();</script>";
     }
 
     $statement->close();

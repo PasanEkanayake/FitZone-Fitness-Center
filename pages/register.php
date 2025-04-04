@@ -57,7 +57,7 @@
         $stmt->bind_param("sssddss", $first_name, $last_name, $email, $weight, $height, $username, $password);
     
         if ($stmt->execute()) {
-            echo "<script>alert('Registration Successful! Redirecting to login...'); window.location.href='login.html';</script>";
+            echo "<script>alert('Registration Successful! Redirecting to login...'); window.location.href='../index.php';</script>";
         } else {
             echo "Error: " . $stmt->error;
         }
