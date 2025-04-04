@@ -35,19 +35,19 @@
                   <li class="nav-item dropdown px-4">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
                     <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><a class="dropdown-item" href="./pages/personal-training.html">Personal Training</a></li>
+                      <li><a class="dropdown-item" href="./pages/group-classes.html">Group Classes</a></li>
+                      <li><a class="dropdown-item" href="./pages/nutrition-counseling.html">Nutrition Counseling</a></li>
+                      <li><a class="dropdown-item" href="./pages/wellness-programs.html">Wellness Programs</a></li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown px-4">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">About</a>
                     <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><a class="dropdown-item" href="./pages/facilities.html">Our Facilities</a></li>
+                      <li><a class="dropdown-item" href="./pages/trainers.html">Our Trainers</a></li>
+                      <li><a class="dropdown-item" href="./pages/specialties.html">Our Specialties</a></li>
+                      <li><a class="dropdown-item" href="./pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                     </ul>
                   </li>
                   <li class="nav-item px-4">
@@ -384,8 +384,9 @@
                         <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="#home-section-3">Memberships</a></li>
-                            <li><a href="./pages/services.html">Services</a></li>
-                            <li><a href="./pages/about.html">About</a></li>
+                            <li><a href="./pages/facilities.html">Our Facilities</a></li>
+                            <li><a href="./pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
+                            <li><a href="./pages/contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">

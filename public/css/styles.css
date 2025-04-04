@@ -239,7 +239,7 @@ nav{
 
 #membership-plans{
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 }
 
 /* #membership-plans .card h4{
@@ -289,6 +289,35 @@ nav{
 #plan-subscribe-btn:hover{
     background-color: #fff;
     color: #0CC359;
+}
+
+#additional-offers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #14703b;
+    background-image: url(../images/pattern-bg-img.png);
+    border-radius: 50px;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+
+#additional-offers h3{
+    color: #fff;
+    font-weight: 500;
+}
+
+#additional-offers p{
+    color: #FFD700;
+    font-size: 20pt;
+    font-weight: 400;
+}
+
+#additional-offers p b{
+    color: #FFf;
+    font-size: 20pt;
+    font-weight: 500;
 }
 
 #bmi-calc div input{
