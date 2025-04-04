@@ -354,3 +354,8 @@ nav{
 .name{
     padding-bottom: 20px;
 }
+
+#footer{
+    background-color: #14703b;
+    background-image: url(../images/pattern-bg-img.png);
+}

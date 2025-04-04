@@ -1,57 +1,29 @@
 <?php
-    include '../includes/db-connection.php';
+    include '../includes/db-connection.php'; // Database connection
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-        // Getting the data from the Register Form
-        $first_name = trim($_POST['first-name']);
-        $last_name = trim($_POST['last-name']);
+        $name = trim($_POST['name']);
         $email = trim($_POST['email']);
-        $weight = !empty($_POST['weight']) ? floatval($_POST['weight']) : NULL;
-        $height = !empty($_POST['height']) ? floatval($_POST['height']) : NULL;
-        $username = trim($_POST['username']);
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirm-password'];
-    
-        // Checking if the passwords match
-        if ($password !== $confirm_password) {
-            echo "<script>alert('Passwords do not match!'); window.history.back();</script>";
-            exit();
-        }
-    
-        // Check if the username already exists in the database
-        $checkUser = $conn->prepare("SELECT member_id FROM members WHERE username = ?");
-        $checkUser->bind_param("s", $username);
-        $checkUser->execute();
-        $checkUser->store_result();
-    
-        if ($checkUser->num_rows > 0) {
-            echo "<script>alert('Username already exists!'); window.history.back();</script>";
+        $subject = trim($_POST['subject']);
+        $message = trim($_POST['message']);
+
+        if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+            echo "<script>alert('All fields are required!'); window.history.back();</script>";
             exit();
         }
 
-        // Check if password already exists in the database
-        $checkPassword = $conn->prepare("SELECT password FROM members");
-        $checkPassword->execute();
-        $checkPassword->store_result();
+        // Insert into database
+        $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $name, $email, $subject, $message);
 
-        if ($checkPassword->num_rows > 0) {
-            echo "<script>alert('This password is already in use! Choose a different one.'); window.history.back();</script>";
-            exit();
-        }
-        $checkPassword->close();
-    
-        // Insert data in the database
-        $stmt = $conn->prepare("INSERT INTO members (first_name, last_name, email, weight, height, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssddss", $first_name, $last_name, $email, $weight, $height, $username, $password);
-    
         if ($stmt->execute()) {
-            echo "<script>alert('Registration Successful! Redirecting to login...'); window.location.href='login.html';</script>";
+            echo "<script>alert('Message sent successfully!'); window.location.href='contact.html';</script>";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "<script>alert('Error sending message! Try again.'); window.history.back();</script>";
         }
-    
+
         $stmt->close();
         $conn->close();
     }
 ?>
+

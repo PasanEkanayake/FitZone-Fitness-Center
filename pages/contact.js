@@ -5,7 +5,6 @@ function validateForm() {
     let message = document.getElementById("message").value.trim();
     let formMessage = document.getElementById("form-message");
 
-    // Simple validation
     if (name === "" || email === "" || subject === "" || message === "") {
         formMessage.textContent = "All fields are required!";
         formMessage.style.color = "red";
@@ -13,8 +12,9 @@ function validateForm() {
     }
 
     // Email validation
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!email.match(pattern)) {
         formMessage.textContent = "Invalid email address!";
         formMessage.style.color = "red";
         return false;

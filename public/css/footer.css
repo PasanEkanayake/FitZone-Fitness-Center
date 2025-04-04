@@ -33,11 +33,6 @@ footer{
     flex-grow: 1;
 }
 
-#footer{
-    background-color: #14703b;
-    background-image: url(../images/pattern-bg-img.png);
-}
-
 .raw{
     width: 100%;
     margin: 5px 30px;

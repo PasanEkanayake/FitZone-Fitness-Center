@@ -8,10 +8,14 @@
     font-family: "Poppins";
 }
 
-main{
-    background-image: url(../public/images/resgister-bg.png);
+#register-body{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0D0D0D;
+    color: #FFF;
+    background-image: url(../public/images/contact-bg.jpg);
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     object-fit: cover;
 }

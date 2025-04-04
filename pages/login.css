@@ -8,7 +8,7 @@
     font-family: "Poppins";
 }
 
-main{
+#login-body{
     background-image: url(../public/images/login-bg.jpeg);
     background-size: cover;
     background-attachment: fixed;
