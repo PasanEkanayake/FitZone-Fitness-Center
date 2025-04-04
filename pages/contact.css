@@ -84,3 +84,35 @@ h2 {
     text-decoration: none;
     font-weight: bold;
 }
+
+#section-heading{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section-heading .section-underline{
+    width: 30%;
+    height: 10px;
+    background: #767676;
+    border-radius: 3px;
+    position: sticky;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#section-heading .section-underline span{
+    width: 20px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}

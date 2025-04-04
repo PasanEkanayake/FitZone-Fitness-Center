@@ -55,78 +55,76 @@
               </div>
             </nav>
         </header>
-         <!-- Trainer Information -->
         <section class="trainer-info">
             <h2>Meet Our Certified Personal Trainers <div class="section-underline"><span></span></h2>
             <p class="trainer-intro">Get one-on-one training from certified professionals to achieve your fitness goals.</p>
             <div class="trainer-container">
                 <div class="trainer-card">
                     <img src="../public/images/trainer-1.png" alt="Trainer 1">
-                    <h3>John Doe</h3>
+                    <h3>John Doe <div class="heading-underline"></div></h3>
                     <p>Expert in Strength Training & Weight Loss</p>
                 </div>
                 <div class="trainer-card">
                     <img src="../public/images/trainer-4.jpg" alt="Trainer 2">
-                    <h3>Jane Smith</h3>
+                    <h3>Jane Smith <div class="heading-underline"></div></h3>
                     <p>Specialist in Yoga & Flexibility Training</p>
                 </div>
                 <div class="trainer-card">
                     <img src="../public/images/trainer-2.jpg" alt="Trainer 3">
-                    <h3>Mike Johnson</h3>
+                    <h3>Mike Johnson <div class="heading-underline"></div></h3>
                     <p>Certified in HIIT & Cardio Workouts</p>
                 </div>
             </div>
         </section>
 
-        <!-- Training Packages -->
         <section class="packages">
-            <h2>Our Training Packages <div class="section-underline"><span></span></h2>
+            <h2 class="packages-heading">Our Training Packages <div class="section-underline"><span></span></h2>
             <div class="packeges-options">
                 <div class="btn" id="package" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo">
-                    <h3>Basic Plan</h3>
+                    <h3>Basic Plan <div class="heading-underline"></div></h3>
                     <p>4 Sessions / Month - $50</p>
                 </div>
                 <div class="btn" id="package" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo">
-                    <h3>Standard Plan</h3>
+                    <h3>Standard Plan <div class="heading-underline"></div></h3>
                     <p>8 Sessions / Month - $90</p>
                 </div>
                 <div class="btn" id="package" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo">
-                    <h3>Premium Plan</h3>
+                    <h3>Premium Plan <div class="heading-underline"></div></h3>
                     <p>Unlimited Sessions - $150</p>
                 </div>
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        <section class="signup-form">
-                            <h2>Reserve Your Personal Training Sessions</h2>
-                            <form id="training-form" action="personal-training.php" method="POST">
-                                <input type="text" name="name" placeholder="Full Name" required>
-                                <input type="email" name="email" placeholder="Email" required>
-                                <input type="tel" name="contact" placeholder="Contact Number (e.g. 0711234567)" pattern="[0-9]{10}" required>
-                                <select name="package">
-                                    <option value="basic">Basic Plan</option>
-                                    <option value="standard">Standard Plan</option>
-                                    <option value="premium">Premium Plan</option>
-                                </select>
-                                <button type="submit">Reserve the Sessions</button>
-                                <p id="form-message"></p>
-                            </form>
-                        </section>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
-                    </div>
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <section class="signup-form">
+                          <h2 class="signup-form-heading">Reserve Your Personal Training Sessions <div class="section-underline"><span></span></h2>
+                          <form id="training-form" action="personal-training.php" method="POST">
+                              <input type="text" name="name" placeholder="Your Full Name" required>
+                              <input type="email" name="email" placeholder="Your Email" required>
+                              <input type="tel" name="contact" placeholder="Contact Number (e.g. 0711234567)" pattern="[0-9]{10}" required>
+                              <select name="package">
+                                  <option value="basic">Basic Plan</option>
+                                  <option value="standard">Standard Plan</option>
+                                  <option value="premium">Premium Plan</option>
+                              </select>
+                              <button type="submit">Reserve the Sessions</button>
+                              <p id="form-message"></p>
+                          </form>
+                      </section>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
                   </div>
                 </div>
               </div>
+            </div>
         </section>
         <div id="footer">
             <footer>
