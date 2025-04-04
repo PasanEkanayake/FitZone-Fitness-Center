@@ -16,6 +16,11 @@
     object-fit: cover;
 }
 
+nav{
+    font-size: 14pt;
+    font-weight: 600;
+}
+
 .container {
     width: 100%;
     margin: auto;
