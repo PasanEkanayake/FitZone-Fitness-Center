@@ -4,7 +4,7 @@
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $sql = "SELECT * FROM blogs WHERE post_id = $id";
+        $sql = "SELECT * FROM blog_posts WHERE post_id = $id";
         $result = mysqli_query($conn, $sql);
         $post = mysqli_fetch_assoc($result);
     }
@@ -13,7 +13,7 @@
         $title = trim($_POST['title']);
         $content = trim($_POST['content']);
 
-        $sql = "UPDATE blogs SET title = ?, content = ?, updated_at = NOW() WHERE post_id = ?";
+        $sql = "UPDATE blog_posts SET title = ?, content = ?, created_at = NOW() WHERE post_id = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ssi", $title, $content, $id);
 

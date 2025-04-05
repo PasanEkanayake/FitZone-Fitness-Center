@@ -11,7 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="../admin/admin-dash.css">
+        <link rel="stylesheet" type="text/css" href="./admin-dash.css">
         <script src="./personal-training.js"></script>
     </head>
     <body id="personal-training-body">
@@ -31,7 +31,7 @@
                       <a class="nav-link" href="../index.html#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.html">Blog</a>
+                      <a class="nav-link" href="../pages/blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -61,26 +61,72 @@
             </nav>
         </header>
         
-        <h1>Manage Blog Posts</h1>
-        <a href="create-post.php">+ New Blog Post</a>
-        <table>
-          <thead>
-            <tr><th>Title</th><th>Category</th><th>Author</th><th>Actions</th></tr>
-          </thead>
-          <tbody>
-            <?php while($row = $result->fetch_assoc()): ?>
+        <div class="manage-posts mb-5 my-5">
+          <h1>Manage Blog Posts</h1>
+          <a href="create-post.php" class="new-post-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+ New Blog Post</a>
+
+          <table class="blog-table">
+            <thead>
               <tr>
-                <td><?= $row['title'] ?></td>
-                <td><?= $row['category'] ?></td>
-                <td><?= $row['author'] ?></td>
-                <td>
-                  <a href="edit-post.php?id=<?= $row['id'] ?>">Edit</a> | 
-                  <a href="delete-post.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this post?')">Delete</a>
-                </td>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Actions</th>
               </tr>
-            <?php endwhile; ?>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <?php while($row = $result->fetch_assoc()): ?>
+                <tr>
+                  <td><?= $row['title'] ?></td>
+                  <td><?= $row['category'] ?></td>
+                  <td><?= $row['author'] ?></td>
+                  <td>
+                    <a class="edit-link" href="./edit-posts.php?id=<?= $row['post_id'] ?>">Edit</a> | 
+                    <a class="delete-link" href="./delete-posts.php?id=<?= $row['post_id'] ?>" onclick="return confirm('Delete this post?')">Delete</a>
+                  </td>
+                </tr>
+              <?php endwhile; ?>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="signup-form-heading">Create Your Blog Post</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <section class="signup-form">
+                  <form action="./publish-post.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="title" placeholder="Blog Title" required><br>
+                    <textarea name="content" placeholder="Write content..." rows="10" required></textarea><br>
+                    <select name="category">
+                      <option value="Workout">Workout Types</option>
+                      <option value="Nutrition">Nutrition & Diet</option>
+                      <option value="Lifestyle">Wellness & Lifestyle</option>
+                      <option value="Programs">Fitness Programs & Goals</option>
+                      <option value="Advice">Trainer Tips & Advice</option>
+                      <option value="Science">Body & Health Science</option>
+                      <option value="Inspiration">Success Stories & Inspiration</option>
+                      <option value="Fitness">At-Home Fitness</option>
+                      <option value="Reviews">Gear & Reviews</option>
+                    </select>
+                    <input type="text" name="author" placeholder="Author" required><br>
+                    <input type="file" name="image" required><br>
+                    <button type="submit">Publish</button>
+                  </form>
+                  </section>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div id="footer">
             <footer>

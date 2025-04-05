@@ -4,7 +4,7 @@
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $sql = "DELETE FROM blogs WHERE id = ?";
+        $sql = "DELETE FROM blog_posts WHERE post_id = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "i", $id);
 

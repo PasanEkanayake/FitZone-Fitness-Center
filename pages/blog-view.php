@@ -71,7 +71,7 @@
         
         <div class="blog-detail">
           <h1><?= $post['title'] ?></h1>
-          <p class="meta">Posted in <?= $post['category'] ?> | By <?= $post['author'] ?> | <?= $post['created_at'] ?></p>
+          <p class="meta">Posted in <?= $post['category'] ?> | By <?= $post['author'] ?> | <?= $post['created_at'] ?> <div class="heading-underline"></div></p>
           <img src="../uploads/<?= $post['image'] ?>" alt="Blog Image">
           <div class="content"><?= nl2br($post['content']) ?></div>
         </div>

@@ -75,7 +75,7 @@
         
         <section class="blog-page">
           <div class="sidebar">
-            <h3>Categories</h3>
+            <h3>Categories <div class="heading-underline"></div></h3>
             <ul class="category-list">
               <li><a href="blog.php">All</a></li>
               <li><a href="blog.php?category=workout">Workout Types</a></li>
@@ -91,12 +91,14 @@
           </div>
 
           <div class="blog-posts">
-            <h1>Latest Blog Posts</h1>
+            <div class="heading">
+              <h1>Latest Blog Posts <div class="section-underline"><span></span></h1>
+            </div>
             <div class="blog-grid">
               <?php while($row = $result->fetch_assoc()): ?>
                 <div class="blog-card">
                   <img src="../uploads/<?= $row['image'] ?>" alt="Blog Image">
-                  <h2><?= $row['title'] ?></h2>
+                  <h2><?= $row['title'] ?> <div class="heading-underline"></div></h2>
                   <p><?= substr(strip_tags($row['content']), 0, 150) ?>...</p>
                   <a href="blog-view.php?post_id=<?= $row['post_id'] ?>">Read More</a>
                 </div>
