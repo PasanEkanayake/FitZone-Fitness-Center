@@ -14,6 +14,7 @@
     background-attachment: fixed;
     background-position: center;
     object-fit: cover;
+    overflow-x: hidden;
 }
 
 nav{
