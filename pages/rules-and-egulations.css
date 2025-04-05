@@ -46,7 +46,8 @@ nav{
   }
   
   h1 {
-    font-size: 30pt;
+    font-size: 35pt;
+    font-weight: 600;
     color: #FFFFFF;
     text-align: center;
     margin-bottom: 10px;

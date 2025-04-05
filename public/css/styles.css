@@ -125,7 +125,7 @@ body{
 }
 
 #home-section-2{
-    background-color: #14703b;
+    background-color: #121212;
     /* font-family: 'PoppinsSB'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
@@ -167,7 +167,7 @@ body{
 }
 
 #home-section-4{
-    background-color: #14703b;
+    background-color: #121212;
     /* font-family: 'PoppinsSB'; */
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
@@ -221,7 +221,7 @@ body{
 }
 
 #home-section-6{
-    background-color: #14703b;
+    background-color: #121212;
     background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
     padding-bottom: 50px;
@@ -254,24 +254,39 @@ nav{
 }
 
 #plan-bronze{
-    background-color: #CD7F32;
+    background-color: #121212;
     /* font-family: 'PoppinsR'; */
     height: 600px;
-    border-radius: 30px;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
+}
+
+#plan-bronze .card-header {
+    background-color: #CD7F32;
+}
+
+#plan-silver .card-header {
+    background-color: #C0C0C0;
+}
+
+#plan-gold .card-header {
+    background-color: #FFD700;
 }
 
 #plan-silver{
-    background-color: #C0C0C0;
+    background-color: #121212;
     /* font-family: 'PoppinsR'; */
     height: 600px;
-    border-radius: 30px;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
 }
 
 #plan-gold{
-    background-color: #FFD700;
+    background-color: #121212;
     /* font-family: 'PoppinsR'; */
     height: 600px;
-    border-radius: 30px;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
 }
 
 #plan-subscribe-btn{
@@ -295,9 +310,10 @@ nav{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #14703b;
-    background-image: url(../images/pattern-bg-img.png);
-    border-radius: 50px;
+    background-color: #121212;
+    /* background-image: url(../images/pattern-bg-img.png); */
+    border: 2px solid #0CC359;
+    border-radius: 10px;
     padding: 20px 0;
     margin-bottom: 50px;
 }
@@ -389,6 +405,6 @@ nav{
 }
 
 #footer{
-    background-color: #14703b;
+    background-color: #121212;
     background-image: url(../images/pattern-bg-img.png);
 }

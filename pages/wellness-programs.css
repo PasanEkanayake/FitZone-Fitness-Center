@@ -25,15 +25,32 @@ nav{
 #footer{
     text-align: left;
 }
-  
+
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.wellness-section-1 {
     margin-top: 50px;
+    max-width: 800px;
+    margin: 50px;
+    padding: 40px;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     font-size: 25pt;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #0CC359;
     margin-bottom: 20px;
 }
 
@@ -79,7 +96,7 @@ ul {
 
 .blog-section {
     padding: 60px 20px;
-    color: #222;
+    color: #FFFFFF;
 }
 
 .blog-section .container {
@@ -101,8 +118,9 @@ ul {
 }
 
 .blog-post {
-    background-color: #fff;
-    border-left: 5px solid #1fd072;
+    background-color: #121212;
+    border: 2px solid #1fd072;
+    border-radius: 10px;
     padding: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
@@ -114,13 +132,13 @@ ul {
 
 .blog-post h3 {
     margin-top: 0;
-    color: #0d0d0d;
+    color: #FFFFFF;
 }
 
 .blog-post a {
     display: inline-block;
     margin-top: 10px;
-    color: #1fd072;
+    color: #0CC359;
     text-decoration: none;
     font-weight: bold;
 }
@@ -129,8 +147,14 @@ ul {
     text-decoration: underline;
 }
 
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section-underline{
-    width: 70%;
+    width: 100%;
     height: 7px;
     background: #767676;
     border-radius: 3px;
@@ -142,6 +166,7 @@ ul {
     text-align: center;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .section-underline span{
@@ -154,98 +179,96 @@ ul {
     animation: moving 2s linear infinite;
 }
 
-.intro h2 .section-underline {
-    width: 57%;
-    margin-top: 10px;
-}
-
-.benefits h2 .section-underline {
-    width: 29%;
-    margin-top: 10px;
-}
-
-.join h2 .section-underline {
-    width: 23%;
-    margin-top: 10px;
-}
-
-.blog-section h2 .section-underline {
+.heading-underline {
     width: 100%;
-    margin-top: 10px;
+    height: 2px;
+    background: #767676;
+    border-radius: 3px;
+    position: sticky;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 .intro p, .benefits ul {
     margin-bottom: 50px;
 }
 
-.blog-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-left: 5px solid #1fd072;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .blog-container h1 {
+.blog-container h1 {
     color: #1fd072;
     font-size: 2.5rem;
     margin-bottom: 20px;
-  }
+}
 
-  .blog-container h2 {
+.blog-container h2 {
     color: #ffffff;
     font-size: 1.8rem;
     margin-top: 30px;
-  }
+}
 
-  .blog-container p {
+.blog-container p {
     color: #e0e0e0;
     margin-bottom: 20px;
-  }
+}
 
-  blockquote {
+blockquote {
     background: #222;
     border-left: 5px solid #1fd072;
     margin: 20px 0;
     padding: 10px 20px;
     font-style: italic;
     color: #c2f5dd;
-  }
+}
 
-  .tip {
+.tip {
     background-color: #1fd072;
     color: #0d0d0d;
     padding: 10px;
     margin: 15px 0;
     border-radius: 4px;
     font-weight: bold;
-  }
+}
 
-  .blog-footer {
+.blog-footer {
     margin-top: 40px;
     text-align: center;
     font-style: italic;
     color: #aaa;
-  }
-
-  .modal-body {
-      background-color: #14703b;
-  }
-
-  .modal-body h1 {
-      font-size: 25pt;
-  }
-
-  .modal-body h2 {
-    font-size: 18pt;
 }
 
-  .modal-body p {
+.modal-content {
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #0CC359;
+    color: #FFFFFF;
+}
+
+.modal-header h2 {
+    color: #FFFFFF;
+}
+
+.modal-body h1 {
+    font-size: 25pt;
+}
+
+.modal-body h2 {
+  font-size: 18pt;
+}
+
+.modal-body p {
     font-size: 12pt;
 }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .blog-container {
       padding: 15px;
     }
@@ -257,16 +280,16 @@ ul {
     .blog-container h2 {
       font-size: 1.5rem;
     }
-  }
+}
 
 @media (max-width: 992px) {
     .blog-posts {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
   
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .blog-posts {
       grid-template-columns: 1fr;
     }
-  }
+}

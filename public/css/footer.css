@@ -43,6 +43,9 @@ footer{
 }
 
 #section{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     flex-basis: 25%;
     padding: 10px;
 }
@@ -106,6 +109,12 @@ hr{
 
 .copyright{
     text-align: center;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .underline{

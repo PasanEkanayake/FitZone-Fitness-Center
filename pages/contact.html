@@ -55,75 +55,30 @@
               </div>
             </nav>
         </header>
-        <!-- <main>
-            <div class="main">
-              <div class="raw m-0" id="login-section">
-                <div class="col-md-6">
-                  <div class="login-text-section">
-                    <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
-                    <h4>Take the first step of your journey to fitness from here!</h4>
-                    <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./login.html'">Login Here</button>
-                  </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                  <form action="register.php" method="post" class="register-form">
-                    <h1>Register</h1><br><br>
-                    <div class="name-input-box">
-                        <input type="text" id="first-name" name="first-name" placeholder="*First Name" required>
-                    </div>
-                    <div class="name-input-box">
-                        <input type="text" id="last-name" name="last-name" placeholder="*Last Name" required>
-                    </div>
-                    <div class="email-input-box">
-                        <input type="email" id="email" name="email" placeholder="*Email" required>
-                        <span id="errormessage"></span>
-                    </div>
-                    <div class="measurement-input-box">
-                        <input type="number" id="weight" name="weight" placeholder="Your Weight in Kilograms (kg)">
-                    </div>
-                    <div class="measurement-input-box">
-                        <input type="number" id="height" name="height" placeholder="Your Height in Centimeters (cm)">
-                    </div>
-                    <div class="username-input-box">
-                      <input type="text" id="username" name="username" placeholder="*Username" required>
-                      <span id="usernameerror" class="error"></span>
-                    </div>
-                    <div class="password-input-box">
-                      <input type="password" id="password" name="password" placeholder="*Password" required>
-                      <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
-                      <span id="passworderror" class="error"></span>
-                    </div>
-                    <label for="password">(password must contain at least 8 characters)</label>
-                    <div class="password-input-box">
-                      <input type="password" id="confirm-password" name="confirm-password" placeholder="*Confirm Password" required>
-                      <img src="../public/images/eye-close.png" id="confirm-eye-icon" onclick="showConfirmPassword()">
-                    </div>
-                    <button type="submit" class="btn">Register</button>
-                    <p>Already a registered member? <a href="login.html">Login Here</a></p>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </main> -->
         <section id="contact-section">
             <div class="container">
-                <h2 class="section-title" id="section-heading">Contact Us <div class="section-underline"><span></span></h2>
-                <p>Have questions? Feel free to reach out to us.</p>
-    
-                <div class="contact-container">
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <form action="contact.php" method="POST" onsubmit="return validateForm()">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <button type="submit">Send Message</button>
-                            <p id="form-message"></p>
-                        </form>
+              <div class="container">
+                <div class="main-contact-container">
+                  <div class="heading">
+                    <h2 class="section-title" id="section-heading">Contact Us <div class="section-underline"><span></span></h2>
+                  </div>
+                    <p>Have questions? Feel free to reach out to us.</p>
+        
+                    <div class="contact-container">
+                        <!-- Contact Form -->
+                        <div class="contact-form">
+                            <form action="contact.php" method="POST" onsubmit="return validateForm()">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                                <button type="submit">Send Message</button>
+                                <p id="form-message"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
-    
+              </div>
             </div>
         </section>
         <div id="footer">
