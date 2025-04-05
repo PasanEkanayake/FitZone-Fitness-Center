@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    text-align: center;
     background-image: url(../public/images/pattern-bg-img.png);
     background-color: #14703b;
     background-position: left;
@@ -20,100 +21,66 @@ body {
 nav{
     font-size: 14pt;
     font-weight: 600;
+    text-align: left;
 }
 
 #footer{
     text-align: left;
 }
 
-#nutrition-counseling{
-    display: flex;
+h1.section-title {
+    font-size: 35pt;
+    color: #FFFFFF;
+    margin-bottom: 1em;
 }
-  
-.nutrition-container {
-    max-width: 800px;
-    margin: 50px;
-    padding: 40px;
+
+#specialties-body .container {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
+}
+
+.specialty-card {
     background-color: #121212;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.nutrition-container h2 {
-    color: #0CC359;
-    font-size: 25pt;
-    font-weight: 600;
-    margin-bottom: 30px;
+.specialty-card:hover {
+    transform: translateY(-10px);
 }
 
-ul {
-    padding-left: 20px;
-    margin-bottom: 50px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-.consultation-form {
-    max-width: 800px;
-    margin: 50px;
-    padding: 40px;
-    padding: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #121212;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.consultation-form form {
-    max-width: 500px;
-    margin: auto;
-}
-
-.consultation-form input, 
-.consultation-form textarea {
+.specialty-img {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.consultation-form button {
-    background-color: #0CC359;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 35px;
-    margin-top: 20px;
+.specialty-card h3 {
+    font-size: 22px;
+    color: #FFFFFF;
+    margin-top: 15px;
 }
 
-.consultation-form button:hover {
-    background-color: #FFFFFF;
-    color: #0CC359;
-}
-
-.heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.specialty-card p {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    flex-grow: 1; /* Ensures all cards are of equal height */
 }
 
 .section-underline{
     width: 100%;
-    height: 7px;
+    height: 10px;
     background: #767676;
     border-radius: 3px;
     position: sticky;
@@ -153,17 +120,14 @@ li {
     margin-bottom: 30px;
 }
 
-.consultation-form .section-underline{
-    width: 100%;
-    height: 7px;
-    background: #767676;
-    border-radius: 3px;
-    position: sticky;
-    top: 35px;
-    left: 0;
-    overflow: hidden;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 30px;
+@media (min-width: 768px) {
+    .specialty-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .specialty-card {
+        margin-bottom: 20px;
+    }
 }
