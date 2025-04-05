@@ -62,15 +62,15 @@
           <input type="text" name="title" placeholder="Blog Title" required><br>
           <textarea name="content" placeholder="Write content..." rows="10" required></textarea><br>
           <select name="category">
-            <option value="workout">Workout Types</option>
-            <option value="nutrition">Nutrition & Diet</option>
-            <option value="lifestyle">Wellness & Lifestyle</option>
-            <option value="programs">Fitness Programs & Goals</option>
-            <option value="advice">Trainer Tips & Advice</option>
-            <option value="science">Body & Health Science</option>
-            <option value="inspiration">Body & Health Science</option>
-            <option value="fitness">At-Home Fitness</option>
-            <option value="reviews">Gear & Reviews</option>
+            <option value="Workout">Workout Types</option>
+            <option value="Nutrition">Nutrition & Diet</option>
+            <option value="Lifestyle">Wellness & Lifestyle</option>
+            <option value="Programs">Fitness Programs & Goals</option>
+            <option value="Advice">Trainer Tips & Advice</option>
+            <option value="Science">Body & Health Science</option>
+            <option value="Inspiration">Success Stories & Inspiration</option>
+            <option value="Fitness">At-Home Fitness</option>
+            <option value="Reviews">Gear & Reviews</option>
           </select>
           <input type="text" name="author" placeholder="Author" required><br>
           <input type="file" name="image" required><br>

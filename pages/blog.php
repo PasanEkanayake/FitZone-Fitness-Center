@@ -68,16 +68,15 @@
                   </ul>
                   
                 </div>
+                <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='../admin/admin-dash.php'">Manage Posts</button>
               </div>
             </nav>
         </header>
         
-        <a href="../admin/create-post.php">New Post</a>
-
         <section class="blog-page">
           <div class="sidebar">
             <h3>Categories</h3>
-            <ul>
+            <ul class="category-list">
               <li><a href="blog.php">All</a></li>
               <li><a href="blog.php?category=workout">Workout Types</a></li>
               <li><a href="blog.php?category=nutrition">Nutrition & Diet</a></li>
@@ -85,7 +84,7 @@
               <li><a href="blog.php?category=programs">Fitness Programs & Goals</a></li>
               <li><a href="blog.php?category=advice">Trainer Tips & Advice</a></li>
               <li><a href="blog.php?category=science">Body & Health Science</a></li>
-              <li><a href="blog.php?category=inspiration">Body & Health Science</a></li>
+              <li><a href="blog.php?category=inspiration">Success Stories & Inspiration</a></li>
               <li><a href="blog.php?category=fitness">At-Home Fitness</a></li>
               <li><a href="blog.php?category=reviews">Gear & Reviews</a></li>
             </ul>

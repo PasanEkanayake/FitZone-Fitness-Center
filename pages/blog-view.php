@@ -64,12 +64,20 @@
               </div>
             </nav>
         </header>
+
+        <div class="back-btn-wrapper">
+          <a href="blog.php" class="back-btn">← Back to Blog</a>
+        </div>
         
         <div class="blog-detail">
           <h1><?= $post['title'] ?></h1>
           <p class="meta">Posted in <?= $post['category'] ?> | By <?= $post['author'] ?> | <?= $post['created_at'] ?></p>
           <img src="../uploads/<?= $post['image'] ?>" alt="Blog Image">
           <div class="content"><?= nl2br($post['content']) ?></div>
+        </div>
+
+        <div class="back-btn-wrapper" id="bottom-back-btn">
+          <a href="blog.php" class="back-btn">← Back to Blog</a>
         </div>
         
         <div id="footer">
