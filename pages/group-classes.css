@@ -21,6 +21,7 @@ body {
 nav{
     font-size: 14pt;
     font-weight: 600;
+    text-align: left;
 }
 
 #footer{
