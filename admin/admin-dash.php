@@ -1,15 +1,20 @@
+<?php
+    include '../includes/db-connection.php';
+    $result = $conn->query("SELECT * FROM blog_posts ORDER BY created_at DESC");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blog | FitZone Fitness Center</title>
+        <title>Admin Dashboard | FitZone Fitness Center</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./blog.css">
-        <script src="./blog.js"></script>
+        <link rel="stylesheet" type="text/css" href="../admin/admin-dash.css">
+        <script src="./personal-training.js"></script>
     </head>
-    <body id="contact-body">
+    <body id="personal-training-body">
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
@@ -26,7 +31,7 @@
                       <a class="nav-link" href="../index.html#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="./blog.html">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -55,27 +60,28 @@
               </div>
             </nav>
         </header>
-        <section id="contact-section">
-            <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <p>Have questions? Feel free to reach out to us.</p>
-    
-                <div class="contact-container">
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <form action="contact.php" method="POST" onsubmit="return validateForm()">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <button type="submit">Send Message</button>
-                            <p id="form-message"></p>
-                        </form>
-                    </div>
-                </div>
-    
-            </div>
-        </section>
+        
+        <h1>Manage Blog Posts</h1>
+        <a href="create-post.php">+ New Blog Post</a>
+        <table>
+          <thead>
+            <tr><th>Title</th><th>Category</th><th>Author</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <?php while($row = $result->fetch_assoc()): ?>
+              <tr>
+                <td><?= $row['title'] ?></td>
+                <td><?= $row['category'] ?></td>
+                <td><?= $row['author'] ?></td>
+                <td>
+                  <a href="edit-post.php?id=<?= $row['id'] ?>">Edit</a> | 
+                  <a href="delete-post.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this post?')">Delete</a>
+                </td>
+              </tr>
+            <?php endwhile; ?>
+          </tbody>
+        </table>
+
         <div id="footer">
             <footer>
               <div class="container-fluid">

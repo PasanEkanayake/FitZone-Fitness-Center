@@ -1,15 +1,17 @@
+<?php include '../includes/db-connection.php'; ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blog | FitZone Fitness Center</title>
+        <title>Create Blog Post | Admin Dashboard | FitZone Fitness Center</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./blog.css">
-        <script src="./blog.js"></script>
+        <link rel="stylesheet" type="text/css" href="./personal-training.css">
+        <script src="./personal-training.js"></script>
     </head>
-    <body id="contact-body">
+    <body id="personal-training-body">
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
@@ -26,7 +28,7 @@
                       <a class="nav-link" href="../index.html#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="./blog.html">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -55,27 +57,26 @@
               </div>
             </nav>
         </header>
-        <section id="contact-section">
-            <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <p>Have questions? Feel free to reach out to us.</p>
-    
-                <div class="contact-container">
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <form action="contact.php" method="POST" onsubmit="return validateForm()">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <button type="submit">Send Message</button>
-                            <p id="form-message"></p>
-                        </form>
-                    </div>
-                </div>
-    
-            </div>
-        </section>
+        
+        <form action="./publish-post.php" method="post" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="Blog Title" required><br>
+          <textarea name="content" placeholder="Write content..." rows="10" required></textarea><br>
+          <select name="category">
+            <option value="workout">Workout Types</option>
+            <option value="nutrition">Nutrition & Diet</option>
+            <option value="lifestyle">Wellness & Lifestyle</option>
+            <option value="programs">Fitness Programs & Goals</option>
+            <option value="advice">Trainer Tips & Advice</option>
+            <option value="science">Body & Health Science</option>
+            <option value="inspiration">Body & Health Science</option>
+            <option value="fitness">At-Home Fitness</option>
+            <option value="reviews">Gear & Reviews</option>
+          </select>
+          <input type="text" name="author" placeholder="Author" required><br>
+          <input type="file" name="image" required><br>
+          <button type="submit">Post Blog</button>
+        </form>
+
         <div id="footer">
             <footer>
               <div class="container-fluid">

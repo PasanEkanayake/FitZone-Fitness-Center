@@ -1,15 +1,24 @@
+<?php
+    include '../includes/db-connection.php';
+    $id = $_GET['post_id'];
+    $stmt = $conn->prepare("SELECT * FROM blog_posts WHERE post_id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $post = $stmt->get_result()->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blog | FitZone Fitness Center</title>
+        <title><?= $post['title'] ?> | Blog | FitZone Fitness Center</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./blog.css">
-        <script src="./blog.js"></script>
+        <link rel="stylesheet" type="text/css" href="./blog-view.css">
+        <script src="./personal-training.js"></script>
     </head>
-    <body id="contact-body">
+    <body id="personal-training-body">
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
@@ -26,7 +35,7 @@
                       <a class="nav-link" href="../index.html#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="./blog.html">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -55,27 +64,14 @@
               </div>
             </nav>
         </header>
-        <section id="contact-section">
-            <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <p>Have questions? Feel free to reach out to us.</p>
-    
-                <div class="contact-container">
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <form action="contact.php" method="POST" onsubmit="return validateForm()">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <button type="submit">Send Message</button>
-                            <p id="form-message"></p>
-                        </form>
-                    </div>
-                </div>
-    
-            </div>
-        </section>
+        
+        <div class="blog-detail">
+          <h1><?= $post['title'] ?></h1>
+          <p class="meta">Posted in <?= $post['category'] ?> | By <?= $post['author'] ?> | <?= $post['created_at'] ?></p>
+          <img src="../uploads/<?= $post['image'] ?>" alt="Blog Image">
+          <div class="content"><?= nl2br($post['content']) ?></div>
+        </div>
+        
         <div id="footer">
             <footer>
               <div class="container-fluid">
