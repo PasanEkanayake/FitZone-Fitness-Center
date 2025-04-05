@@ -55,3 +55,11 @@ function calculateBMI() {
   document.getElementById("bmi-result").value = bmi;
   document.getElementById("bmi-condition").value = condition;
 }
+
+// Clear the BMI input Feilds
+function resetBMI() {
+    document.getElementById("height").value = "";
+    document.getElementById("weight").value = "";
+    document.getElementById("bmi-result").value = "";
+    document.getElementById("bmi-condition").value = "";
+  }  

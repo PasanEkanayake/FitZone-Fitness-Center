@@ -1,41 +1,12 @@
-/* @font-face {
-    font-family: 'PoppinsBL';
-    src: url(../fonts/poppins/Poppins-Black.ttf);
-}
-
-@font-face {
-    font-family: 'PoppinsSB';
-    src: url(../fonts/poppins/Poppins-SemiBold.ttf);
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+/* Global Styles */
+* {
     font-family: "Poppins";
 }
 
-#home-section-1{
+body {
     display: flex;
-    position: relative;
-    flex-grow: 1;
-    /* background-color: #0CC359; */
-    /* font-family: 'PoppinsBL'; */
-    background-image: url(../images/pattern-bg-img.png);
-    overflow: hidden;
-}
-
-#home-section-1 h1{
-    font-weight: 700;
-    color: #0CC359;
-}
-
-#home-section-1 h4{
-    color: #fff;
-}
-
-body{
-    display: flex;
-    /* justify-content: space-between; */
     background-image: url(../images/bg-img2.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -44,63 +15,69 @@ body{
     overflow-x: hidden;
 }
 
-/* .home-section-1-img{
-    width: 500px;
-} */
-
-.main{
-    /* display: flex;
-    padding: 10px;
-    justify-content: space-between; */
+.main {
     align-items: center;
 }
 
-#home-carousel-img{
-    width: fit-content;
-    max-height: 550px;
+img {
+    max-width: 100%;
+}
+
+.img-fluid {
+    width: 500px;
+}
+
+nav {
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+/* Section Styles */
+#home-section-1 {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
     overflow: hidden;
 }
 
-#home-join-btn {
-    width: 200px;
-    height: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 16pt;
-}
-
-#home-join-btn:hover{
-    background-color: #fff;
+#home-section-1 h1 {
+    font-weight: 700;
     color: #0CC359;
 }
 
-.home-welcome-section{
+#home-section-1 h4 {
+    color: #fff;
+}
+
+.home-welcome-section {
     text-align: right;
     padding-top: 200px;
     padding-right: 30px;
     padding-left: 20px;
 }
 
-.section-titles{
+.carousel-inner {
+    height: 500px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* Section Titles */
+.section-titles {
     font-weight: 700;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 100px 0;
+    margin: 80px 0 50px;
     color: #fff;
     align-items: center;
-    /* font-family: 'PoppinsSB'; */
 }
 
-.section-titles h3{
+.section-titles h3 {
     font-weight: 600;
 }
 
-.section-underline{
+.section-underline {
     width: 100%;
     height: 10px;
     background: #767676;
@@ -112,9 +89,10 @@ body{
     display: flex;
     text-align: center;
     align-items: center;
+    margin-top: 10px;
 }
 
-.section-underline span{
+.section-underline span {
     width: 20px;
     height: 100%;
     background: #fff;
@@ -124,138 +102,137 @@ body{
     animation: moving 2s linear infinite;
 }
 
-#home-section-2{
+/* Section Backgrounds */
+#home-section-2, #home-section-6 {
     background-color: #121212;
-    /* font-family: 'PoppinsSB'; */
-    background-image: url(../images/pattern-bg-img.png);
-    overflow: hidden;
-    padding: 50px 0;
-}
-
-.search-bar{
-    margin: 20px;
-}
-
-.search-bar input{
-    height: 70px;
-    border-radius: 50px;
-    /* box-shadow: #000; */
-}
-
-.search-bar button{
-    width: 200px;
-    height: 70px;
-    border-radius: 50px;
-}
-
-#search-btn{
-    background-color: #0CC359;
-    color: #fff;
-    font-size: 18pt;
-}
-
-#search-btn:hover{
-    background-color: #000000;
-    color: #0CC359;
-}
-
-#home-section-3{
-    /* background-color: #0CC359; */
-    /* font-family: 'PoppinsSB'; */
-    background-image: url(../images/pattern-bg-img.png);
     overflow: hidden;
 }
 
-#home-section-4{
-    background-color: #121212;
-    /* font-family: 'PoppinsSB'; */
-    background-image: url(../images/pattern-bg-img.png);
-    overflow: hidden;
+#home-section-2 {
+    padding: 30px 0;
+}
+
+#home-section-4 {
     padding-bottom: 100px;
 }
 
-#home-section-5{
+#home-section-4 h3 {
+    color: #0CC359;
+}
+
+#home-section-5 {
     display: flex;
     position: relative;
     flex-grow: 1;
-    /* background-color: #0CC359; */
-    /* font-family: 'PoppinsBL'; */
-    background-image: url(../images/pattern-bg-img.png);
 }
 
-#home-section-5 h1{
-    color: #0CC359;
+#home-section-6 {
+    padding-bottom: 50px;
 }
 
-#home-section-5 h4{
-    color: #fff;
-}
-
-.home-blog-section{
-    text-align: left;
-    padding-top: 100px;
-    padding-right: 30px;
-    padding-left: 20px;
-}
-
-.home-blog-section{
-    font-weight: 700;
-    color: #0CC359;
-}
-
-#home-blog-btn {
-    width: 400px;
+/* Buttons */
+#home-join-btn, #plan-subscribe-btn, #bmi-calc div button {
+    width: 200px;
     height: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
     background-color: #0CC359;
     color: #fff;
     transition: background-color 0.1s ease-in-out;
     border-radius: 250px;
     font-size: 16pt;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-#home-blog-btn:hover{
+#home-join-btn:hover, #home-blog-btn:hover, #plan-subscribe-btn:hover, #bmi-calc div button:hover {
     background-color: #fff;
     color: #0CC359;
 }
 
-#home-section-6{
-    background-color: #121212;
-    background-image: url(../images/pattern-bg-img.png);
-    overflow: hidden;
-    padding-bottom: 50px;
+#search-btn {
+    background-color: #0CC359;
+    color: #fff;
+    font-size: 18pt;
 }
 
-nav{
-    font-size: 14pt;
-    font-weight: 600;
-}
-
-#membership-title{
+#search-btn:hover {
+    background-color: #000000;
     color: #0CC359;
 }
 
-#membership-plans{
+/* Search Bar */
+.search-bar {
+    margin: 20px;
+}
+
+.search-bar input {
+    height: 70px;
+    border-radius: 50px;
+}
+
+.search-bar button {
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+/* Blog Section */
+.home-blog-section {
+    text-align: left;
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-left: 20px;
+    font-weight: 700;
+    color: #0CC359;
+}
+
+.home-blog-section h1 {
+    font-weight: 700;
+}
+
+.home-blog-section h4 {
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+#home-blog-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #0CC359;
+    color: #fff;
+    transition: background-color 0.1s ease-in-out;
+    border-radius: 250px;
+    font-size: 16pt;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Membership Plans */
+#membership-title {
+    color: #0CC359;
+}
+
+#membership-plans {
     align-items: center;
     padding-bottom: 30px;
 }
 
-/* #membership-plans .card h4{
-    color: #fff;
-    font-family: 'PoppinsSB';
-} */
+#membership-plans h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
 
-#membership-plans .card h5, p{
-    /* color: #fff; */
-    /* font-family: 'PoppinsR'; */
+#membership-plans .card h5, p {
     font-size: 12pt;
     padding: 10px;
 }
 
-#plan-bronze{
+/* Plan Cards */
+#plan-bronze, #plan-silver, #plan-gold {
     background-color: #121212;
-    /* font-family: 'PoppinsR'; */
     height: 600px;
     border: 2px solid #0CC359;
     border-radius: 10px;
@@ -273,113 +250,67 @@ nav{
     background-color: #FFD700;
 }
 
-#plan-silver{
-    background-color: #121212;
-    /* font-family: 'PoppinsR'; */
-    height: 600px;
-    border: 2px solid #0CC359;
-    border-radius: 10px;
-}
-
-#plan-gold{
-    background-color: #121212;
-    /* font-family: 'PoppinsR'; */
-    height: 600px;
-    border: 2px solid #0CC359;
-    border-radius: 10px;
-}
-
-#plan-subscribe-btn{
-    width: 100%;
-    height: 50px;
-    margin: 20px 0;
-    background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 16pt;
-}
-
-#plan-subscribe-btn:hover{
-    background-color: #fff;
-    color: #0CC359;
-}
-
-#additional-offers{
+/* Additional Offers */
+#additional-offers {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: #121212;
-    /* background-image: url(../images/pattern-bg-img.png); */
     border: 2px solid #0CC359;
     border-radius: 10px;
     padding: 20px 0;
     margin-bottom: 50px;
 }
 
-#additional-offers h3{
+#additional-offers h3 {
     color: #fff;
     font-weight: 500;
 }
 
-#additional-offers p{
+#additional-offers p {
     color: #FFD700;
     font-size: 20pt;
     font-weight: 400;
 }
 
-#additional-offers p b{
-    color: #FFf;
+#additional-offers p b {
+    color: #FFF;
     font-size: 20pt;
     font-weight: 500;
 }
 
-#bmi-calc div input{
+/* BMI Calculator */
+#bmi-calc div input {
     width: 400px;
     height: 100px;
     border-radius: 25px;
     padding: 30px;
-    margin: 10PX;
+    margin: 10px;
     border: none;
 }
 
-#bmi-calc div button{
-    width: 100%;
-    height: 50px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 16pt;
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-#bmi-calc div button:hover{
-    background-color: #fff;
-    color: #0CC359;
-}
-
-#bmi-result, #bmi-condition{
+#bmi-result, #bmi-condition {
     font-weight: 700;
     font-size: 20pt;
 }
 
-#feedback-card{
+/* Feedback Section */
+#feedback-card {
     background-color: #fff;
-    /* font-family: 'PoppinsR'; */
     height: 250px;
     border-radius: 30px;
 }
 
-.img-fluid{
-    width: 500px;
+.feedback {
+    text-align: center;
 }
 
-#carouselExampleDark{
+.name {
+    padding-bottom: 20px;
+}
+
+#carouselExampleDark {
     display: flex;
     padding: 35px;
     text-align: center;
@@ -388,7 +319,8 @@ nav{
     color: #fff;
 }
 
-.user-img{
+/* User Image */
+.user-img {
     width: 180px;
     height: 180px;
     margin-bottom: 50px;
@@ -396,15 +328,87 @@ nav{
     border-radius: 50%;
 }
 
-.feedback{
-    text-align: center;
-}
-
-.name{
-    padding-bottom: 20px;
-}
-
-#footer{
+/* Footer */
+#footer {
     background-color: #121212;
     background-image: url(../images/pattern-bg-img.png);
 }
+
+/* Home Posts Button */
+#home-posts-btn {
+    transition: transform 0.3s ease-in-out;
+}
+
+#home-posts-btn:hover {
+    transform: translateY(-10px);
+}
+
+.bmi-calc-container {
+    background-color: #1a1a1a;
+    padding: 40px 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(12, 195, 89, 0.2);
+    gap: 20px;
+  }
+  
+  .bmi-calc-inputs,
+  .bmi-calc-results {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .bmi-calc-btn {
+    flex: 1 1 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .bmi-calc-container input {
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    color: #ffffff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 12pt;
+    transition: 0.3s;
+  }
+  
+  .bmi-calc-container input::placeholder {
+    color: #bbbbbb;
+  }
+  
+  .bmi-calc-container input:focus {
+    outline: none;
+    background-color: #1e1e1e;
+    border-color: #10e070;
+  }
+  
+  .bmi-calc-container button {
+    background-color: #0CC359;
+    color: #ffffff;
+    font-size: 14pt;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+  }
+  
+  .bmi-calc-container button:hover {
+    background-color: #10e070;
+    color: #000000;
+  }
+
+  

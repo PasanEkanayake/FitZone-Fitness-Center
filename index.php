@@ -1,4 +1,9 @@
-<?php session_start(); ?> 
+<?php
+    include './includes/db-connection.php';
+
+    $sql = "SELECT * FROM blog_posts ORDER BY created_at DESC LIMIT 2";
+    $result = $conn->query($sql); 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -9,9 +14,16 @@
         <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
         <link rel="stylesheet" type="text/css" href="./public/css/header.css">
         <link rel="stylesheet" type="text/css" href="./public/css/footer.css">
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
         <script src="./scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+          function resetBMI() {
+            document.getElementById("height").value = "";
+            document.getElementById("weight").value = "";
+            document.getElementById("bmi-result").value = "";
+            document.getElementById("bmi-condition").value = "";
+          }  
+        </script>
     </head>
     <body>
         <header>
@@ -51,316 +63,225 @@
                     </ul>
                   </li>
                   <li class="nav-item px-4">
-                    <a class="nav-link" href="#footer">Contact</a>
+                    <a class="nav-link" href="./pages/contact.html">Contact</a>
                   </li>
                 </ul>
-                
               </div>
-              <?php if (isset($_SESSION['username'])): ?>
-                <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
-                <a href="logout.php"><button>Logout</button></a>
-              <?php else: ?>
-              <!-- <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button> -->
-              <button class="btn mx-4" type="button" id="logout-btn" onclick="location.href='./index.html'">Logout</button>
-              <?php endif; ?>
+              <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button>
             </div>
           </nav>
         </header>
         <div class="main">
-            <section id="home-section-1">
-              <!-- <div class="container-fluid"> -->
-                <div class="raw m-0 p-0 g-0">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="home-welcome-section">
-                      <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
-                      <h4>Your journey to fitness starts here!</h4>
-                      <!-- <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button> -->
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="home-carousel-section">
-                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="./public/images/home-carousel-img1.jpg" class="d-block" alt="home-carousel-img1" id="home-carousel-img">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="./public/images/home-carousel-img2.jpg" class="d-block" alt="home-carousel-img2" id="home-carousel-img">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="./public/images/home-carousel-img3.jpg" class="d-block" alt="home-carousel-img3" id="home-carousel-img">
-                          </div>
-                        </div>
+          <section id="home-section-1">
+            <div class="raw m-0 p-0 g-0">
+              <div class="col-md-6 col-sm-12">
+                <div class="home-welcome-section">
+                  <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
+                  <h4>Your journey to fitness starts here!</h4>
+                  <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="home-carousel-section">
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./public/images/home-carousel-img1.jpg" class="d-block" alt="home-carousel-img1" id="home-carousel-img">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./public/images/specialty-2.jpeg" class="d-block" alt="home-carousel-img2" id="home-carousel-img">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./public/images/home-carousel-img3.jpg" class="d-block" alt="home-carousel-img3" id="home-carousel-img">
                       </div>
                     </div>
                   </div>
                 </div>
-              <!-- </div> -->
-            </section>
-            <section id="home-section-2">
-              <div class="container">
-                <div class="raw">
-                  <div class="col-md-8">
-                    <div class="search-bar">
-                      <input class="form-control me-2 shadow-lg" type="search" placeholder="Search about Fitness Details, Trainers and Services" aria-label="Search">
-                    </div>
+              </div>
+            </div>
+          </section>
+          <section id="home-section-2">
+            <div class="container">
+              <div class="raw">
+                <div class="col-md-8">
+                  <div class="search-bar">
+                    <input class="form-control me-2 shadow-lg" type="search" placeholder="Search about Fitness Details, Trainers and Services" aria-label="Search">
                   </div>
-                  <div class="col-md-4">
-                    <div class="search-bar">
-                      <button class="btn shadow-lg" type="submit" id="search-btn">Search</button>
-                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="search-bar">
+                    <button class="btn shadow-lg" type="submit" id="search-btn">Search</button>
                   </div>
                 </div>
               </div>
-            </section>
-            <section id="home-section-3">
-              <div class="section-titles">
-                <h3 class="display-4" id="membership-title">Membership Plans <div class="section-underline"><span></span></h3>
-              </div>
-              <div class="container">
-                <div class="raw m-0" id="membership-plans">
-                  <div class="col-md-4">
-                    <div class="card m-3" id="plan-bronze">
-                      <h4 class="card-header">Basic Plan (Bronze) - $20/month</h5>
+            </div>
+          </section>
+          <section id="home-section-3">
+            <div class="section-titles">
+              <h3 class="display-4" id="membership-title">Membership Plans <div class="section-underline"><span></span></h3>
+            </div>
+            <div class="container">
+              <div class="raw m-0" id="membership-plans">
+                <div class="col-md-4">
+                  <div class="card m-3" id="plan-bronze">
+                    <h4 class="card-header">Basic Plan (Bronze) - $20/month</h5>
+                    <div class="card-body">
+                      <h5 class="card-title text-bg-success">Access to gym facilities (machines & weights)</h5>
+                      <h5 class="card-title text-bg-success">Unlimited cardio access</h5>
+                      <h5 class="card-title text-bg-success">Locker room access</h5>
+                      <h5 class="card-title text-bg-success">Free WiFi</h5>
+                      <h5 class="card-title text-bg-danger">No personal training</h5>
+                      <h5 class="card-title text-bg-danger">No group classes</h5>
+                      <p class="card-text text-bg-light"><b>Best for:</b> Beginners or casual gym-goers who want to work out independently.</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card m-3" id="plan-silver">
+                    <h4 class="card-header">Standard Plan (Silver) - $40/month</h5>
                       <div class="card-body">
-                        <h5 class="card-title text-bg-success">Access to gym facilities (machines & weights)</h5>
-                        <h5 class="card-title text-bg-success">Unlimited cardio access</h5>
-                        <h5 class="card-title text-bg-success">Locker room access</h5>
-                        <h5 class="card-title text-bg-success">Free WiFi</h5>
-                        <h5 class="card-title text-bg-danger">No personal training</h5>
-                        <h5 class="card-title text-bg-danger">No group classes</h5>
-                        <p class="card-text text-bg-light"><b>Best for:</b> Beginners or casual gym-goers who want to work out independently.</p>
+                        <h5 class="card-title text-bg-success">Everything in Basic Plan</h5>
+                        <h5 class="card-title text-bg-success">Access to all group classes (Yoga, Zumba, HIIT, etc.)</h5>
+                        <h5 class="card-title text-bg-success">Monthly fitness assessment</h5>
+                        <h5 class="card-title text-bg-success">1 free personal training session per month</h5>
+                        <h5 class="card-title text-bg-success">Nutritional guidance</h5>
+                        <h5 class="card-title text-bg-danger">No Sauna & spa access</h5>
+                        <p class="card-text text-bg-light"><b>Best for:</b> Individuals looking for structured workouts and occasional trainer support.</p>
                       </div>
                       <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card m-3" id="plan-silver">
-                      <h4 class="card-header">Standard Plan (Silver) - $40/month</h5>
-                        <div class="card-body">
-                          <h5 class="card-title text-bg-success">Everything in Basic Plan</h5>
-                          <h5 class="card-title text-bg-success">Access to all group classes (Yoga, Zumba, HIIT, etc.)</h5>
-                          <h5 class="card-title text-bg-success">Monthly fitness assessment</h5>
-                          <h5 class="card-title text-bg-success">1 free personal training session per month</h5>
-                          <h5 class="card-title text-bg-success">Nutritional guidance</h5>
-                          <h5 class="card-title text-bg-danger">No Sauna & spa access</h5>
-                          <p class="card-text text-bg-light"><b>Best for:</b> Individuals looking for structured workouts and occasional trainer support.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card m-3" id="plan-gold">
-                      <h4 class="card-header">Premium Plan (Gold) - $70/month</h5>
-                        <div class="card-body">
-                          <h5 class="card-title text-bg-success">Everything in Standard Plan</h5>
-                          <h5 class="card-title text-bg-success">Unlimited personal training sessions</h5>
-                          <h5 class="card-title text-bg-success">Customized diet & workout plans</h5>
-                          <h5 class="card-title text-bg-success">Sauna & spa access</h5>
-                          <h5 class="card-title text-bg-success">Priority booking for classes</h5>
-                          <h5 class="card-title text-bg-success">Exclusive gym events & workshops</h5>
-                          <p class="card-text text-bg-light"><b>Best for:</b> Serious fitness enthusiasts who want full support and premium facilities.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
-                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
-            <section id="home-section-4">
-              <div class="section-titles">
-                <h3 class="display-4">What is your BMI? <div class="section-underline"><span></span></h3>
-              </div>
-              <div class="container-fluid">
-                <div class="raw m-0 px-5" id="bmi-calc">
-                  <div class="col-md-5 text-center">
-                    <!-- <label for="height">Your Height</label> -->
-                    <input type="number" id="height" name="height" placeholder="Height in centimeters (cm)" required>
-                    <input type="number" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
-                  </div>
-                  <div class="col-md-2 text-center">
-                    <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-                  </div>
-                  <div class="col-md-5 text-center">
-                    <!-- <label for="bmi">Your BMI</label> -->
-                    <input type="text" id="bmi-result" name="bmi-result" placeholder="BMI" readonly><br>
-                    <!-- <label for="bmi-condition">Condition</label> -->
-                    <input type="text" id="bmi-condition" name="bmi-condition" placeholder="Condition" readonly>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section id="home-section-5">
-              <!-- <div class="container-fluid"> -->
-                <div class="raw m-0 p-0 g-0">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="container d-block">
-                      <div class="raw mt-4">
-                        <div class="card mb-3" style="max-width: 700px;">
-                          <div class="row g-0">
-                            <div class="col-md-4 overflow-hidden">
-                              <img src="./public/images/home-carousel-img1.jpg" class="img-fluid rounded-start" alt="..." style="max-width: 350px;">
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="raw">
-                        <div class="card mb-3" style="max-width: 700px;">
-                          <div class="row g-0">
-                            <div class="col-md-4 overflow-hidden">
-                              <img src="./public/images/home-carousel-img2.jpg" class="img-fluid rounded-start" alt="..." style="max-width: 350px;">
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="home-blog-section">
-                      <h1 class="display-4">Are you<br> new to the GYM life?</h1>
-                      <h4>Worry not, We are fully prepared to guide you throughout the process. <br>We also have a dedicated blog to bring latest updates
-                        in the blink of an eye.</h4>
-                      <button class="btn mx-4" type="button" id="home-blog-btn" onclick="location.href='./pages/login.html'">Checkout Our Blog Now</button>
-                    </div>
-                  </div>
-                </div>
-              <!-- </div> -->
-            </section>
-            <section id="home-section-6">
-              <div class="section-titles">
-                <h3 class="display-4">Member Testimonies <div class="section-underline"><span></span></div></h3>
-              </div>
-              <!-- <div class="container">
-                <div class="raw m-0" id="membership-plans">
-                  <div class="col-md-3">
-                    <div class="card m-3" id="feedback-card">
+                <div class="col-md-4">
+                  <div class="card m-3" id="plan-gold">
+                    <h4 class="card-header">Premium Plan (Gold) - $70/month</h5>
                       <div class="card-body">
-                        <p class="card-text text-bg-light">"FitZone has completely transformed my fitness journey!
-                           The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</p>
+                        <h5 class="card-title text-bg-success">Everything in Standard Plan</h5>
+                        <h5 class="card-title text-bg-success">Unlimited personal training sessions</h5>
+                        <h5 class="card-title text-bg-success">Customized diet & workout plans</h5>
+                        <h5 class="card-title text-bg-success">Sauna & spa access</h5>
+                        <h5 class="card-title text-bg-success">Priority booking for classes</h5>
+                        <h5 class="card-title text-bg-success">Exclusive gym events & workshops</h5>
+                        <p class="card-text text-bg-light"><b>Best for:</b> Serious fitness enthusiasts who want full support and premium facilities.</p>
+                      </div>
+                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="raw m-0 mb-5" id="additional-offers">
+                <h3 class="display-6">Promotional Offers <div class="section-underline"><span></span></h4><br>
+                <p><b>Annual Membership Discount:</b> Get 2 months free when signing up for a 1-year plan!</p>
+                <p><b>Student Discount:</b> 10% off on all plans with a valid student ID.</p>
+              </div>
+            </div>
+          </section>
+          <section id="home-section-4">
+            <div class="section-titles">
+              <h3 class="display-4">What is your BMI? <div class="section-underline"><span></span></h3>
+            </div>
+            <div class="bmi-calc-container">
+              <div class="bmi-calc-inputs">
+                <input type="number" id="height" name="height" placeholder="Height in centimeters (cm)" required>
+                <input type="number" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
+              </div>
+              <div class="bmi-calc-btn">
+                <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+                <button type="button" onclick="resetBMI()">Reset</button>
+              </div>
+              <div class="bmi-calc-results">
+                <input type="text" id="bmi-result" name="bmi-result" placeholder="BMI" readonly>
+                <input type="text" id="bmi-condition" name="bmi-condition" placeholder="Condition" readonly>
+              </div>
+            </div>
+          </section>
+          <section id="home-section-5">
+          <div class="row m-0 p-0 g-0">
+            <!-- First Column: Recent Blog Posts -->
+            <div class="col-md-6 col-sm-12">
+              <div class="container d-block m-0">
+                <!-- Most Recent Blog Post 1 -->
+                <?php while ($row = $result->fetch_assoc()): ?>
+                <div class="row mt-4">
+                  <a href="./pages/blog-view.php?post_id=<?= $row['post_id']; ?>" style="text-decoration: none;" id="home-posts-btn">
+                    <div class="card mb-3 mx-3" style="max-width: 700px; background-color: #121212; border: 2px solid #0CC359;">
+                      <div class="row">
+                        <div class="col-md-4 overflow-hidden">
+                          <img src="./uploads/<?= $row['image']; ?>" class="img-fluid" alt="Blog Image" style="max-width: 350px;">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title" style="color: #0CC359;"><?= $row['title']; ?></h5>
+                            <p class="card-text" style="color: #FFFFFF;"><?= substr(strip_tags($row['content']), 0, 150); ?>...</p>
+                            <p class="card-text" style="color: #888888;"><small><?= $row['created_at']; ?></small></p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card m-3" id="feedback-card">
-                        <div class="card-body">
-                          <p class="card-text text-bg-light">"The personal training sessions are worth every penny! 
-                            My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</p>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card m-3" id="feedback-card">
-                        <div class="card-body">
-                          <p class="card-text text-bg-light">"Great gym with top-notch equipment. The staff is friendly, and the facility is 
-                            always clean. Perfect for those who want a no-fuss, independent workout space."</p>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card m-3" id="feedback-card">
-                        <div class="card-body">
-                          <p class="card-text text-bg-light">"I love the balance of group classes and personal training in my plan. 
-                            The trainers push me to do my best, and I've seen amazing results in just three months!"</p>
-                        </div>
-                    </div>
-                  </div>
+                  </a>
                 </div>
-              </div> -->
-              <!-- <div class="section-content">
-                <div class="slider-container swiper">
-                  <div class="slider-wrapper">
-                    <ul class="testimonies-list swiper-wrapper">
-                      <li class="testimonial swiper-slide">
-                        <img src="./public/images/home-carousel-img1.jpg" alt="User" class="user-img">
-                        <h3 class="name">Sarah Johnson</h3>
-                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                      </li>
-                      <li class="testimonial swiper-slide">
-                        <img src="./public/images/home-carousel-img2.jpg" alt="User" class="user-img">
-                        <h3 class="name">Sarah Johnson</h3>
-                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                      </li>
-                      <li class="testimonial swiper-slide">
-                        <img src="./public/images/home-carousel-img3.jpg" alt="User" class="user-img">
-                        <h3 class="name">Sarah Johnson</h3>
-                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                      </li>
-                      <li class="testimonial swiper-slide">
-                        <img src="./public/images/home-carousel-img1.jpg" alt="User" class="user-img">
-                        <h3 class="name">Sarah Johnson</h3>
-                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                      </li>
-                      <li class="testimonial swiper-slide">
-                        <img src="./public/images/home-carousel-img3.jpg" alt="User" class="user-img">
-                        <h3 class="name">Sarah Johnson</h3>
-                        <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated, and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                      </li>
-                    </ul>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                  </div>
-                </div>
-              </div> -->
-              <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                </div>
-                <div class="carousel-inner" style="padding-bottom: 50px;">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="./public/images/user-img1.jpg" alt="User" class="user-img">
-                    <h3 class="name">John D. (Silver Plan Member)</h3>
-                    <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated,<br> and the trainers are super helpful. I love the friendly atmosphere!"</i>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./public/images/user-img2.jpg" alt="User" class="user-img">
-                    <h3 class="name">David M. (Gold Plan Member)</h3>
-                    <i class="feedback">"FitZone is hands down the best gym in town! The personal trainers are knowledgeable,<br> and the customized workout plans have helped me build strength and endurance."</i>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./public/images/user-img3.jpg" alt="User" class="user-img">
-                    <h3 class="name">Sarah L. (Gold Plan Member)</h3>
-                    <i class="feedback">"The personal training sessions are worth every penny!<br> My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</i>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./public/images/user-img4.jpg" alt="User" class="user-img">
-                    <h3 class="name">Michael R. (Basic Plan Member)</h3>
-                    <i class="feedback">"Great gym with top-notch equipment. The staff is friendly, and the facility is always clean.<br> Perfect for those who want a no-fuss, independent workout space."</i>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./public/images/user-img5.jpg" alt="User" class="user-img">
-                    <h3 class="name">Emily K. (Silver Plan Member)</h3>
-                    <i class="feedback">"I love the balance of group classes and personal training in my plan.<br> The trainers push me to do my best, and I’ve seen amazing results in just three months!"</i>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <?php endwhile; ?>
               </div>
-            </section>
+            </div>
+
+            <!-- Second Column: Blog Call-to-Action -->
+            <div class="col-md-6 col-sm-12">
+              <div class="home-blog-section">
+                <h1 class="display-4">Are you <br> new to the GYM life?</h1>
+                <h4>Worry not, We are fully prepared to guide you throughout the process. <br> We also have a dedicated blog to bring latest updates in the blink of an eye.</h4>
+                <button class="btn btn-success" type="button" id="home-blog-btn" onclick="location.href='./pages/blog.php'">Checkout Our Blog Now</button>
+              </div>
+            </div>
+          </div>
+          </section>
+          <section id="home-section-6">
+            <div class="section-titles">
+              <h3 class="display-4">Member Testimonies <div class="section-underline"><span></span></div></h3>
+            </div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+              <div class="carousel-inner" style="padding-bottom: 50px;">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="./public/images/user-img1.jpg" alt="User" class="user-img">
+                  <h3 class="name">John D. (Silver Plan Member)</h3>
+                  <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated,<br> and the trainers are super helpful. I love the friendly atmosphere!"</i>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="./public/images/user-img2.jpg" alt="User" class="user-img">
+                  <h3 class="name">David M. (Gold Plan Member)</h3>
+                  <i class="feedback">"FitZone is hands down the best gym in town! The personal trainers are knowledgeable,<br> and the customized workout plans have helped me build strength and endurance."</i>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="./public/images/user-img3.jpg" alt="User" class="user-img">
+                  <h3 class="name">Sarah L. (Gold Plan Member)</h3>
+                  <i class="feedback">"The personal training sessions are worth every penny!<br> My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</i>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="./public/images/user-img4.jpg" alt="User" class="user-img">
+                  <h3 class="name">Michael R. (Basic Plan Member)</h3>
+                  <i class="feedback">"Great gym with top-notch equipment. The staff is friendly, and the facility is always clean.<br> Perfect for those who want a no-fuss, independent workout space."</i>
+                </div>
+                <div class="carousel-item">
+                  <img src="./public/images/user-img5.jpg" alt="User" class="user-img">
+                  <h3 class="name">Emily K. (Silver Plan Member)</h3>
+                  <i class="feedback">"I love the balance of group classes and personal training in my plan.<br> The trainers push me to do my best, and I’ve seen amazing results in just three months!"</i>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
         </div>
         <div id="footer">
           <footer>
