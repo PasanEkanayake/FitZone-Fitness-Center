@@ -1,15 +1,32 @@
+<?php
+    include './db-connection.php';
+
+    // Get search query from GET request
+    $query = isset($_GET['query']) ? $_GET['query'] : '';
+
+    // Prepare SQL statement to fetch search results based on query
+    $sql = "SELECT * FROM blog_posts WHERE title LIKE ? OR content LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $searchTerm = "%" . $query . "%"; // Like query
+    $stmt->bind_param("ss", $searchTerm, $searchTerm);
+    $stmt->execute();
+
+    // Get the result set
+    $result = $stmt->get_result();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>We are the Best at | FitZone Fitness Center</title>
+        <title>Our Facilities | FitZone Fitness Center</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./specialties.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/search-results.css">
         <script src="./wellness-programs.js"></script>
     </head>
-    <body id="specialties-body">
+    <body id="group-classes-body">
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
@@ -26,7 +43,7 @@
                       <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.html">Blog</a>
+                      <a class="nav-link" href="./blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -56,58 +73,22 @@
             </nav>
         </header>
         
-        <div class="container">
-          <h1 class="section-title text-center my-5">Our Specialties <div class="section-underline"><span></span></h1>
-          <div class="row">
-            <!-- Specialties Section 1 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-1.jpg" alt="Cardio Training" class="specialty-img">
-                <h3>Cardio Training <div class="heading-underline"></div></h3>
-                <p>Our cardio training sessions include high-intensity workouts that improve heart health, endurance, and overall fitness. Ideal for weight loss and boosting stamina.</p>
+        <div class="search-results-container">
+          <h2>Search Results for: <span>"<?= htmlspecialchars($query) ?>"</span></h2>
+
+          <?php if ($result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+              <div class="search-result-card">
+                <h4><a href="../pages/blog-view.php?post_id=<?= $row['post_id'] ?>"><?= htmlspecialchars($row['title']) ?></a> 
+                  <small><?= date("F j, Y", strtotime($row['created_at'])) ?></small>
+                </h4>
+                <p><?= substr(strip_tags($row['content']), 0, 150) ?>...</p>
               </div>
-            </div>
-            <!-- Specialties Section 2 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-2.jpeg" alt="Strength Training" class="specialty-img">
-                <h3>Strength Training <div class="heading-underline"></div></h3>
-                <p>Build muscle and increase strength with our personalized strength training routines. Whether you're a beginner or advanced, we help you reach your strength goals.</p>
-              </div>
-            </div>
-            <!-- Specialties Section 3 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-3.png" alt="Yoga" class="specialty-img">
-                <h3>Yoga <div class="heading-underline"></div></h3>
-                <p>Our yoga classes provide mental relaxation, flexibility, and stress relief. From beginner to advanced levels, enjoy peaceful flow sequences that rejuvenate your body and mind.</p>
-              </div>
-            </div>
-            <!-- Specialties Section 4 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-4.jpg" alt="Personal Training" class="specialty-img">
-                <h3>Personal Training <div class="heading-underline"></div></h3>
-                <p>Get one-on-one training with certified trainers who tailor programs to fit your needs. Whether for weight loss, strength, or injury recovery, our experts are here to help.</p>
-              </div>
-            </div>
-            <!-- Specialties Section 5 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-5.jpg" alt="Spin Classes" class="specialty-img">
-                <h3>Spin Classes <div class="heading-underline"></div></h3>
-                <p>Join our high-energy spin classes for an amazing cardio workout. Burn calories, improve cardiovascular health, and push your limits with every pedal.</p>
-              </div>
-            </div>
-            <!-- Specialties Section 6 -->
-            <div class="col-md-4 mb-3">
-              <div class="specialty-card">
-                <img src="../public/images/specialty-6.jpg" alt="Rehabilitation" class="specialty-img">
-                <h3>Rehabilitation <div class="heading-underline"></div></h3>
-                <p>Our rehab programs are designed for injury recovery. Work with experienced trainers to regain strength, flexibility, and mobility safely and effectively.</p>
-              </div>
-            </div>
-          </div>
+            <?php endwhile; ?>
+          <?php else: ?>
+            <p class="no-results">No results found for your query.</p>
+          <?php endif; ?>
+
         </div>
 
         <div id="footer">
@@ -158,3 +139,9 @@
         </div>
     </body>
 </html>
+
+<?php
+  // Close the database connection
+  $stmt->close();
+  $conn->close();
+?>

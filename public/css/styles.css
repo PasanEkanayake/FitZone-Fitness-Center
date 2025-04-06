@@ -19,17 +19,21 @@ body {
     align-items: center;
 }
 
-img {
-    max-width: 100%;
-}
-
-.img-fluid {
-    width: 500px;
-}
-
 nav {
     font-size: 14pt;
     font-weight: 600;
+}
+
+#join-btn {
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: #0CC359;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 /* Section Styles */
@@ -49,6 +53,10 @@ nav {
     color: #fff;
 }
 
+#home-section-1 img {
+    max-width: 100%;
+}
+
 .home-welcome-section {
     text-align: right;
     padding-top: 200px;
@@ -56,7 +64,7 @@ nav {
     padding-left: 20px;
 }
 
-.carousel-inner {
+#welcome-carousel-inner {
     height: 500px;
     object-fit: cover;
     overflow: hidden;
@@ -102,15 +110,60 @@ nav {
     animation: moving 2s linear infinite;
 }
 
-/* Section Backgrounds */
-#home-section-2, #home-section-6 {
-    background-color: #121212;
-    overflow: hidden;
-}
-
 #home-section-2 {
-    padding: 30px 0;
-}
+    padding: 60px 20px;
+    background-color: #0a0a0a;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  
+  /* Input */
+  .search-form input[type="search"] {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+  }
+  
+  .search-form input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Button */
+  .search-form button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #0CC359;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-form button:hover {
+    background-color: #ffffff;
+    color: #0CC359;
+  }
 
 #home-section-4 {
     padding-bottom: 100px;
@@ -132,49 +185,20 @@ nav {
 
 /* Buttons */
 #home-join-btn, #plan-subscribe-btn, #bmi-calc div button {
-    width: 200px;
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    padding: 15px 30px;
+    font-size: 20px;
     background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 16pt;
+    color: #ffffff;
     border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 #home-join-btn:hover, #home-blog-btn:hover, #plan-subscribe-btn:hover, #bmi-calc div button:hover {
     background-color: #fff;
     color: #0CC359;
-}
-
-#search-btn {
-    background-color: #0CC359;
-    color: #fff;
-    font-size: 18pt;
-}
-
-#search-btn:hover {
-    background-color: #000000;
-    color: #0CC359;
-}
-
-/* Search Bar */
-.search-bar {
-    margin: 20px;
-}
-
-.search-bar input {
-    height: 70px;
-    border-radius: 50px;
-}
-
-.search-bar button {
-    width: 200px;
-    height: 70px;
-    border-radius: 50px;
 }
 
 /* Blog Section */
@@ -197,16 +221,15 @@ nav {
 }
 
 #home-blog-btn {
-    width: 100%;
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    padding: 15px 30px;
+    font-size: 20px;
     background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 16pt;
+    color: #ffffff;
     border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -328,12 +351,6 @@ nav {
     border-radius: 50%;
 }
 
-/* Footer */
-#footer {
-    background-color: #121212;
-    background-image: url(../images/pattern-bg-img.png);
-}
-
 /* Home Posts Button */
 #home-posts-btn {
     transition: transform 0.3s ease-in-out;
@@ -355,26 +372,26 @@ nav {
     align-items: center;
     box-shadow: 0 0 15px rgba(12, 195, 89, 0.2);
     gap: 20px;
-  }
-  
-  .bmi-calc-inputs,
-  .bmi-calc-results {
+}
+
+.bmi-calc-inputs,
+.bmi-calc-results {
     flex: 1 1 40%;
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
-  
-  .bmi-calc-btn {
+}
+
+.bmi-calc-btn {
     flex: 1 1 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
-  }
-  
-  .bmi-calc-container input {
+}
+
+.bmi-calc-container input {
     background-color: #121212;
     border: 2px solid #0CC359;
     color: #ffffff;
@@ -382,33 +399,74 @@ nav {
     border-radius: 8px;
     font-size: 12pt;
     transition: 0.3s;
-  }
-  
-  .bmi-calc-container input::placeholder {
+}
+
+.bmi-calc-container input::placeholder {
     color: #bbbbbb;
-  }
-  
-  .bmi-calc-container input:focus {
+}
+
+.bmi-calc-container input:focus {
     outline: none;
     background-color: #1e1e1e;
     border-color: #10e070;
-  }
-  
-  .bmi-calc-container button {
+}
+
+.bmi-calc-container button {
     background-color: #0CC359;
     color: #ffffff;
-    font-size: 14pt;
+    font-size: 16pt;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease;
     width: 100%;
-  }
-  
-  .bmi-calc-container button:hover {
-    background-color: #10e070;
-    color: #000000;
-  }
+}
 
-  
+.bmi-calc-container button:hover {
+    background-color: #FFFFFF;
+    color: #0CC359;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#testimonials {
+    margin-bottom: 50px;
+}
+
+#testimonial-title {
+    color: #0CC359;
+    font-size: 35pt;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.testimonial-card {
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+#testimonialCarousel {
+    margin-top: 30px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #0CC359;
+    border-radius: 50%;
+    padding: 10px;
+}

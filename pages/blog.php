@@ -29,17 +29,17 @@
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
-                <a href="../index.html"><img src="../public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
+                <a href="../index.php"><img src="../public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-items">
                     <li class="nav-item px-4">
-                      <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                      <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="../index.html#home-section-3">Memberships</a>
+                      <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
                       <a class="nav-link" href="./blog.html">Blog</a>
@@ -105,6 +105,7 @@
               <?php endwhile; ?>
             </div>
           </div>
+          
         </section>
         
         <div id="footer">
@@ -112,7 +113,7 @@
               <div class="container-fluid">
                   <div class="raw">
                       <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
-                          <a href="../index.html"><img src="../public/images/logo.png" class="footer-logo"></a>
+                          <a href="../index.php"><img src="../public/images/logo.png" class="footer-logo"></a>
                           <p>FitZone Fitness Center is your ultimate fitness destination, offering top-tier equipment, expert trainers, and a 
                             supportive community. Whether you're a beginner or a pro, we’re here to help you reach your goals. 
                             💪🔥 #StrongerEveryDay</p>
@@ -127,8 +128,8 @@
                       <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                           <h3>Quick Links <div class="underline"><span></span></div></h3>
                           <ul>
-                              <li><a href="../index.html">Home</a></li>
-                              <li><a href="../index.html#home-section-3">Memberships</a></li>
+                              <li><a href="../index.php">Home</a></li>
+                              <li><a href="../index.php#home-section-3">Memberships</a></li>
                               <li><a href="./personal-training.html">Personal Training</a></li>
                               <li><a href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
                               <li><a href="../pages/contact.html">Contact Us</a></li>

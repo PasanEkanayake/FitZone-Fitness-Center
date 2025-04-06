@@ -29,14 +29,14 @@
         <header>
           <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
             <div class="container-fluid">
-              <a href="./index.html"><img src="./public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
+              <a href="./index.php"><img src="./public/images/logo.png" class="float-start" alt="Logo" id="header-logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-items">
                   <li class="nav-item px-4">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
                   </li>
                   <li class="nav-item px-4">
                     <a class="nav-link" href="#home-section-3">Memberships</a>
@@ -84,7 +84,7 @@
               <div class="col-md-6 col-sm-12">
                 <div class="home-carousel-section">
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" id="welcome-carousel-inner">
                       <div class="carousel-item active">
                         <img src="./public/images/home-carousel-img1.jpg" class="d-block" alt="home-carousel-img1" id="home-carousel-img">
                       </div>
@@ -101,19 +101,11 @@
             </div>
           </section>
           <section id="home-section-2">
-            <div class="container">
-              <div class="raw">
-                <div class="col-md-8">
-                  <div class="search-bar">
-                    <input class="form-control me-2 shadow-lg" type="search" placeholder="Search about Fitness Details, Trainers and Services" aria-label="Search">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="search-bar">
-                    <button class="btn shadow-lg" type="submit" id="search-btn">Search</button>
-                  </div>
-                </div>
-              </div>
+            <div class="search-wrapper">
+              <form class="search-form" action="./includes/search-results.php" method="GET">
+                <input type="search" name="query" id="search-bar" placeholder="Search about Fitness Details, Trainers and Services" required>
+                <button type="submit" id="search-btn">Search</button>
+              </form>
             </div>
           </section>
           <section id="home-section-3">
@@ -195,91 +187,121 @@
             </div>
           </section>
           <section id="home-section-5">
-          <div class="row m-0 p-0 g-0">
-            <!-- First Column: Recent Blog Posts -->
-            <div class="col-md-6 col-sm-12">
-              <div class="container d-block m-0">
-                <!-- Most Recent Blog Post 1 -->
-                <?php while ($row = $result->fetch_assoc()): ?>
-                <div class="row mt-4">
-                  <a href="./pages/blog-view.php?post_id=<?= $row['post_id']; ?>" style="text-decoration: none;" id="home-posts-btn">
-                    <div class="card mb-3 mx-3" style="max-width: 700px; background-color: #121212; border: 2px solid #0CC359;">
-                      <div class="row">
-                        <div class="col-md-4 overflow-hidden">
-                          <img src="./uploads/<?= $row['image']; ?>" class="img-fluid" alt="Blog Image" style="max-width: 350px;">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title" style="color: #0CC359;"><?= $row['title']; ?></h5>
-                            <p class="card-text" style="color: #FFFFFF;"><?= substr(strip_tags($row['content']), 0, 150); ?>...</p>
-                            <p class="card-text" style="color: #888888;"><small><?= $row['created_at']; ?></small></p>
+            <div class="row m-0 p-0 g-0">
+              <!-- First Column: Recent Blog Posts -->
+              <div class="col-md-6 col-sm-12">
+                <div class="container d-block m-0">
+                  <!-- Most Recent Blog Post 1 -->
+                  <?php while ($row = $result->fetch_assoc()): ?>
+                  <div class="row mt-4">
+                    <a href="./pages/blog-view.php?post_id=<?= $row['post_id']; ?>" style="text-decoration: none;" id="home-posts-btn">
+                      <div class="card mb-3 mx-3" style="max-width: 700px; background-color: #121212; border: 2px solid #0CC359;">
+                        <div class="row">
+                          <div class="col-md-4 overflow-hidden">
+                            <img src="./uploads/<?= $row['image']; ?>" class="img-fluid" alt="Blog Image" style="max-width: 350px;">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: #0CC359;"><?= $row['title']; ?></h5>
+                              <p class="card-text" style="color: #FFFFFF;"><?= substr(strip_tags($row['content']), 0, 150); ?>...</p>
+                              <p class="card-text" style="color: #888888;"><small><?= $row['created_at']; ?></small></p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
+                  <?php endwhile; ?>
                 </div>
-                <?php endwhile; ?>
               </div>
-            </div>
 
-            <!-- Second Column: Blog Call-to-Action -->
-            <div class="col-md-6 col-sm-12">
-              <div class="home-blog-section">
-                <h1 class="display-4">Are you <br> new to the GYM life?</h1>
-                <h4>Worry not, We are fully prepared to guide you throughout the process. <br> We also have a dedicated blog to bring latest updates in the blink of an eye.</h4>
-                <button class="btn btn-success" type="button" id="home-blog-btn" onclick="location.href='./pages/blog.php'">Checkout Our Blog Now</button>
+              <!-- Second Column: Blog Call-to-Action -->
+              <div class="col-md-6 col-sm-12">
+                <div class="home-blog-section">
+                  <h1 class="display-4">Are you <br> new to the GYM life?</h1>
+                  <h4>Worry not, We are fully prepared to guide you throughout the process. <br> We also have a dedicated blog to bring latest updates in the blink of an eye.</h4>
+                  <button class="btn btn-success" type="button" id="home-blog-btn" onclick="location.href='./pages/blog.php'">Checkout Our Blog Now</button>
+                </div>
               </div>
             </div>
-          </div>
           </section>
-          <section id="home-section-6">
-            <div class="section-titles">
-              <h3 class="display-4">Member Testimonies <div class="section-underline"><span></span></div></h3>
-            </div>
-            <div id="carouselExampleDark" class="carousel carousel-dark slide">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <section id="testimonials">
+            <div class="container">
+              <div class="heading">
+                <h2 class="text-center mb-4" id="testimonial-title">What Our Members Say <div class="section-underline"><span></span></h2>
               </div>
-              <div class="carousel-inner" style="padding-bottom: 50px;">
-                <div class="carousel-item active" data-bs-interval="10000">
-                  <img src="./public/images/user-img1.jpg" alt="User" class="user-img">
-                  <h3 class="name">John D. (Silver Plan Member)</h3>
-                  <i class="feedback">"FitZone has completely transformed my fitness journey! The group classes keep me motivated,<br> and the trainers are super helpful. I love the friendly atmosphere!"</i>
+
+              <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active">
+                    <div class="row g-3">
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"Amazing staff and top-notch equipment. My fitness journey has never been better!"</p>
+                          <h5>- Alex Fernando</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"I love the group classes and how professional the trainers are."</p>
+                          <h5>- Nadeesha Perera</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"The nutrition advice helped me lose 10kg in 2 months. Highly recommend!"</p>
+                          <h5>- Dilan Ranasinghe</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"A friendly environment with great workout plans tailored just for me."</p>
+                          <h5>- Ishara Gunawardena</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="carousel-item">
+                    <div class="row g-3">
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"The personalized training really kept me motivated and consistent."</p>
+                          <h5>- Prabath Silva</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"Great value for money and super clean facilities."</p>
+                          <h5>- Dilushi Karunaratne</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"I enjoy the calm yoga studio after a long work day. It’s my peace corner."</p>
+                          <h5>- Ruwani Wijesekera</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="testimonial-card">
+                          <p>"The trainers are very knowledgeable and friendly. I feel at home here."</p>
+                          <h5>- Thilina Jayasuriya</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="./public/images/user-img2.jpg" alt="User" class="user-img">
-                  <h3 class="name">David M. (Gold Plan Member)</h3>
-                  <i class="feedback">"FitZone is hands down the best gym in town! The personal trainers are knowledgeable,<br> and the customized workout plans have helped me build strength and endurance."</i>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="./public/images/user-img3.jpg" alt="User" class="user-img">
-                  <h3 class="name">Sarah L. (Gold Plan Member)</h3>
-                  <i class="feedback">"The personal training sessions are worth every penny!<br> My trainer created a custom workout and diet plan that helped me lose 15 lbs in two months. Highly recommend!"</i>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="./public/images/user-img4.jpg" alt="User" class="user-img">
-                  <h3 class="name">Michael R. (Basic Plan Member)</h3>
-                  <i class="feedback">"Great gym with top-notch equipment. The staff is friendly, and the facility is always clean.<br> Perfect for those who want a no-fuss, independent workout space."</i>
-                </div>
-                <div class="carousel-item">
-                  <img src="./public/images/user-img5.jpg" alt="User" class="user-img">
-                  <h3 class="name">Emily K. (Silver Plan Member)</h3>
-                  <i class="feedback">"I love the balance of group classes and personal training in my plan.<br> The trainers push me to do my best, and I’ve seen amazing results in just three months!"</i>
-                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </section>
         </div>
@@ -288,7 +310,7 @@
             <div class="container-fluid">
                 <div class="raw">
                     <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
-                        <a href="./index.html"><img src="./public/images/logo.png" class="footer-logo"></a>
+                        <a href="./index.php"><img src="./public/images/logo.png" class="footer-logo"></a>
                         <p>FitZone Fitness Center is your ultimate fitness destination, offering top-tier equipment, expert trainers, and a 
                           supportive community. Whether you're a beginner or a pro, we’re here to help you reach your goals. 
                           💪🔥 #StrongerEveryDay</p>
@@ -303,7 +325,7 @@
                     <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3" id="section">
                         <h3>Quick Links <div class="underline"><span></span></div></h3>
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./index.php">Home</a></li>
                             <li><a href="#home-section-3">Memberships</a></li>
                             <li><a href="./pages/facilities.html">Our Facilities</a></li>
                             <li><a href="./pages/rules-and-egulations.html">Our Rules and Regulations</a></li>

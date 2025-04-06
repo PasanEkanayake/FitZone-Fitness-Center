@@ -36,14 +36,6 @@
     color: #0CC359;
 }
 
-#join-btn {
-    width: 150px;
-    background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-}
-
 #join-btn:hover{
     background-color: #fff;
     color: #0CC359;

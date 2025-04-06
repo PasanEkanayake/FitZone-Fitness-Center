@@ -62,4 +62,4 @@ function resetBMI() {
     document.getElementById("weight").value = "";
     document.getElementById("bmi-result").value = "";
     document.getElementById("bmi-condition").value = "";
-  }  
+}
