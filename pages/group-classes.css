@@ -109,12 +109,16 @@ nav{
 }
 
 .signup-form button {
-    color: #FFFFFF;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
     background-color: #0CC359;
+    color: #ffffff;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 25px;
-    margin-top: 30px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .signup-form button:hover {

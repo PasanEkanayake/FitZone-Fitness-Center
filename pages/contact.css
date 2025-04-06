@@ -81,13 +81,16 @@ h2 {
 }
 
 .contact-form button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
     background-color: #0CC359;
-    color: #fff;
-    padding: 10px 20px;
+    color: #ffffff;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 50px;
-    margin-top: 30px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover{

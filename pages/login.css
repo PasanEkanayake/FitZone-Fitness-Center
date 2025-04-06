@@ -129,14 +129,16 @@ nav{
 }
 
 .btn{
-    width: 200px;
-    height: 60px;
+    padding: 15px 30px;
+    margin-top: 15px;
+    font-size: 20px;
     background-color: #0CC359;
-    color: #fff;
-    border-radius: 50px;
-    font-size: 20pt;
-    font-weight: 500;
-    margin-top: 30px;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover{
@@ -156,7 +158,6 @@ nav{
     display: flex;
     text-align: center;
     align-items: center;
-    margin-bottom: 30px;
     margin-top: 10px;
 }
 

@@ -42,7 +42,7 @@
                       <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.html">Blog</a>
+                      <a class="nav-link" href="./blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
@@ -68,7 +68,7 @@
                   </ul>
                   
                 </div>
-                <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='../admin/admin-dash.php'">Manage Posts</button>
+                <button class="btn mx-4" type="button" id="manage-post-btn" onclick="location.href='../admin/admin-dash.php'">Manage Posts</button>
               </div>
             </nav>
         </header>

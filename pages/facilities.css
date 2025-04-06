@@ -73,19 +73,21 @@ nav{
 }
 
 .carousel-caption .btn {
-    margin-top: 10px;
-    border: 2px solid #fff;
-    color: white;
-    font-weight: 600;
-    padding: 8px 18px;
-    border-radius: 50px;
-    transition: 0.3s ease;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #0CC359;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-caption .btn:hover {
-    background-color: #28a745;
-    border-color: #28a745;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: #0CC359;
 }
 
 .modal-content {

@@ -189,14 +189,16 @@ nav{
 }
 
 .btn{
-    width: 200px;
-    height: 60px;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
     background-color: #0CC359;
-    color: #fff;
-    border-radius: 50px;
-    font-size: 20pt;
-    font-weight: 500;
-    margin-top: 30px;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover{
@@ -205,15 +207,16 @@ nav{
 }
 
 #home-join-btn {
-    width: 250px;
-    height: 70px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
     background-color: #0CC359;
-    color: #fff;
-    transition: background-color 0.1s ease-in-out;
-    border-radius: 250px;
-    font-size: 20pt;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 #home-join-btn:hover{
@@ -233,7 +236,6 @@ nav{
     display: flex;
     text-align: center;
     align-items: center;
-    margin-bottom: 30px;
     margin-top: 10px;
 }
 
