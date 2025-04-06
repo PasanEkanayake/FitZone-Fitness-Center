@@ -1,18 +1,8 @@
 <?php
     include './db-connection.php';
-
-    // Get search query from GET request
-    $query = isset($_GET['query']) ? $_GET['query'] : '';
-
-    // Prepare SQL statement to fetch search results based on query
-    $sql = "SELECT * FROM blog_posts WHERE title LIKE ? OR content LIKE ?";
-    $stmt = $conn->prepare($sql);
-    $searchTerm = "%" . $query . "%"; // Like query
-    $stmt->bind_param("ss", $searchTerm, $searchTerm);
-    $stmt->execute();
-
-    // Get the result set
-    $result = $stmt->get_result();
+    include './search-posts.php';
+    include './search-trainers.php';
+    include './search-services.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,34 +27,34 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-items">
                     <li class="nav-item px-4">
-                      <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                      <a class="nav-link active" aria-current="page" href="../public/pages/index.php">Home</a>
                     </li>
                     <li class="nav-item px-4">
                       <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="../pages/blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./personal-training.html">Personal Training</a></li>
-                        <li><a class="dropdown-item" href="./group-classes.html">Group Classes</a></li>
-                        <li><a class="dropdown-item" href="./nutrition-counseling.html">Nutrition Counseling</a></li>
-                        <li><a class="dropdown-item" href="./wellness-programs.html">Wellness Programs</a></li>
+                        <li><a class="dropdown-item" href="../pages/personal-training.html">Personal Training</a></li>
+                        <li><a class="dropdown-item" href="../pages/group-classes.html">Group Classes</a></li>
+                        <li><a class="dropdown-item" href="../pages/nutrition-counseling.html">Nutrition Counseling</a></li>
+                        <li><a class="dropdown-item" href="../pages/wellness-programs.html">Wellness Programs</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">About</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./facilities.html">Our Facilities</a></li>
-                        <li><a class="dropdown-item" href="./trainers.html">Our Trainers</a></li>
-                        <li><a class="dropdown-item" href="./specialties.html">Our Specialties</a></li>
-                        <li><a class="dropdown-item" href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                        <li><a class="dropdown-item" href="../pages/facilities.html">Our Facilities</a></li>
+                        <li><a class="dropdown-item" href="../pages/trainers.html">Our Trainers</a></li>
+                        <li><a class="dropdown-item" href="../pages/specialties.html">Our Specialties</a></li>
+                        <li><a class="dropdown-item" href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                       </ul>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./contact.html">Contact</a>
+                      <a class="nav-link" href="../pages/contact.html">Contact</a>
                     </li>
                   </ul>
                   
@@ -73,20 +63,66 @@
             </nav>
         </header>
         
+        <section id="home-section-2">
+          <div class="search-wrapper">
+            <form class="search-form" action="./search-results.php" method="GET">
+              <input type="search" name="query" id="search-bar" placeholder="Search about Fitness Details, Trainers and Services" required>
+              <button type="submit" id="search-btn">Search</button>
+            </form>
+          </div>
+        </section>
+
         <div class="search-results-container">
           <h2>Search Results for: <span>"<?= htmlspecialchars($query) ?>"</span></h2>
 
+          <h3>Blog Posts</h3>
+          <hr>
           <?php if ($result->num_rows > 0): ?>
             <?php while ($row = $result->fetch_assoc()): ?>
               <div class="search-result-card">
-                <h4><a href="../pages/blog-view.php?post_id=<?= $row['post_id'] ?>"><?= htmlspecialchars($row['title']) ?></a> 
+                <h4>
+                  <a href="../pages/blog-view.php?post_id=<?= $row['post_id'] ?>"><?= htmlspecialchars($row['title']) ?></a> 
                   <small><?= date("F j, Y", strtotime($row['created_at'])) ?></small>
                 </h4>
                 <p><?= substr(strip_tags($row['content']), 0, 150) ?>...</p>
               </div>
             <?php endwhile; ?>
           <?php else: ?>
-            <p class="no-results">No results found for your query.</p>
+            <p class="no-results">No blog posts found that matches your query.<br> You can find more blog posts <a href="../pages/blog.php">Here.</a></p>
+          <?php endif; ?>
+          <hr>
+
+          <h3>FitZone Fitness Trainers</h3>
+          <hr>
+          <?php if ($result2->num_rows > 0): ?>
+            <?php while ($row = $result2->fetch_assoc()): ?>
+              <div class="search-result-card">
+                <h4>
+                  <img src="../public/images/<?= htmlspecialchars($row['trainer_photo']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
+                  <div class="trainer-avatar">
+                    <a href="../pages/trainers.html"><?= htmlspecialchars($row['name']) ?></a>
+                  </div> 
+                </h4>
+              </div>
+            <?php endwhile; ?>
+          <?php else: ?>
+            <p class="no-results">We can't find any trainers that matches your query.<br> You can find more FitZone trainers <a href="../pages/trainers.html">Here.</a></p>
+          <?php endif; ?>
+          <hr>
+
+          <h3>Services provided by FitZone</h3>
+          <hr>
+          <?php if ($result3->num_rows > 0): ?>
+            <?php while ($row = $result3->fetch_assoc()): ?>
+              <div class="search-result-card">
+                <h4>
+                  <a href="../pages/specialties.html"><?= htmlspecialchars($row['service_type']) ?></a> 
+                </h4>
+                <p><?= substr(strip_tags($row['description']), 0, 150) ?>...</p>
+              </div>
+            <?php endwhile; ?>
+          <?php else: ?>
+            <p class="no-results">We can't find the service you are looking for.<br> Try searching for it <a href="../pages/specialties.html">Here.</a></p>
           <?php endif; ?>
 
         </div>
@@ -113,8 +149,8 @@
                           <ul>
                               <li><a href="../index.php">Home</a></li>
                               <li><a href="../index.php#home-section-3">Memberships</a></li>
-                              <li><a href="./personal-training.html">Personal Training</a></li>
-                              <li><a href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                              <li><a href="../pages/personal-training.html">Personal Training</a></li>
+                              <li><a href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                               <li><a href="../pages/contact.html">Contact Us</a></li>
                           </ul>
                       </div>
