@@ -36,16 +36,16 @@ nav{
     border-radius: 10px;
     max-width: 1000px;
     margin: auto;
-  }
-  
-  .manage-posts h1 {
+}
+
+.manage-posts h1 {
     font-size: 22pt;
     margin-bottom: 20px;
     color: #0CC359;
     text-align: center;
-  }
-  
-  .new-post-btn {
+}
+
+.new-post-btn {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 20px;
@@ -55,57 +55,57 @@ nav{
     border-radius: 5px;
     font-size: 11pt;
     transition: 0.3s;
-  }
-  
-  .new-post-btn:hover {
+}
+
+.new-post-btn:hover {
     background-color: #FFFFFF;
     color: #0CC359;
-  }
-  
-  .blog-table {
+}
+
+.blog-table {
     width: 100%;
     border-collapse: collapse;
     background-color: #1e1e1e;
-  }
-  
-  .blog-table th,
-  .blog-table td {
+}
+
+.blog-table th,
+.blog-table td {
     padding: 12px 15px;
     border: 1px solid #0CC359;
     text-align: left;
     font-size: 10.5pt;
-  }
-  
-  .blog-table th {
+}
+
+.blog-table th {
     background-color: #0CC359;
     color: #121212;
     font-weight: bold;
-  }
-  
-  .edit-link,
-  .delete-link {
+}
+
+.edit-link,
+.delete-link {
     color: #0CC359;
     text-decoration: none;
     transition: 0.3s;
-  }
-  
-  .edit-link:hover {
-    color: #52ff9c;
-  }
-  
-  .delete-link:hover {
-    color: #ff4e4e;
-  }
+}
 
-  /* Modal Styling */
+.edit-link:hover {
+    color: #52ff9c;
+}
+
+.delete-link:hover {
+    color: #ff4e4e;
+}
+
+/* Modal Styling */
 .modal-content {
     background-color: #121212;
     border: 2px solid #0CC359;
     border-radius: 10px;
     color: #ffffff;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,30 +114,30 @@ nav{
     border-bottom: 2px solid #0CC359;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-  }
-  
-  .modal-header h2 {
+}
+
+.modal-header h2 {
     font-size: 18pt;
     margin: 0;
     color: #121212;
-  }
-  
-  .modal-header .btn-close {
+}
+
+.modal-header .btn-close {
     background-color: transparent;
     border: none;
     color: #ffffff;
     font-size: 18pt;
     padding: 0;
     cursor: pointer;
-  }
-  
-  .modal-body {
+}
+
+.modal-body {
     padding: 30px;
-  }
-  
-  .signup-form input,
-  .signup-form select,
-  .signup-form textarea {
+}
+
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -146,18 +146,18 @@ nav{
     background-color: #1a1a1a;
     color: #ffffff;
     font-size: 12pt;
-  }
-  
-  .signup-form input::placeholder,
-  .signup-form select::placeholder {
+}
+
+.signup-form input::placeholder,
+.signup-form select::placeholder {
     color: #ccc;
-  }
-  
-  .signup-form select {
+}
+
+.signup-form select {
     background-color: #121212;
-  }
-  
-  .signup-form button {
+}
+
+.signup-form button {
     width: 100%;
     padding: 10px;
     background-color: #0CC359;
@@ -167,21 +167,21 @@ nav{
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  .signup-form button:hover {
+}
+
+.signup-form button:hover {
     background-color: #FFFFFF;
     color: #0CC359;
-  }
-  
-  .signup-form #form-message {
+}
+
+.signup-form #form-message {
     font-size: 10pt;
     margin-top: 10px;
     text-align: center;
     color: #ff4e4e;
-  }
-  
-  .modal-footer {
+}
+
+.modal-footer {
     display: flex;
     justify-content: flex-end;
     padding: 15px;
@@ -189,18 +189,17 @@ nav{
     border-top: 2px solid #0CC359;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-  }
-  
-  .modal-footer .btn-secondary {
+}
+
+.modal-footer .btn-secondary {
     background-color: #0CC359;
     color: #121212;
     border-radius: 5px;
     font-size: 14pt;
     padding: 5px 20px;
-  }
-  
-  .modal-footer .btn-secondary:hover {
+}
+
+.modal-footer .btn-secondary:hover {
     background-color: #0ab84f;
     color: #ffffff;
-  }
-  
+}

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Global Styles */
 * {
     font-family: "Poppins";
 }
@@ -36,7 +35,6 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-/* Section Styles */
 #home-section-1 {
     display: flex;
     position: relative;
@@ -71,7 +69,6 @@ nav {
     overflow: hidden;
 }
 
-/* Section Titles */
 .section-titles {
     font-weight: 700;
     display: flex;
@@ -114,15 +111,15 @@ nav {
 #home-section-2 {
     padding: 60px 20px;
     background-color: #0a0a0a;
-  }
-  
-  .search-wrapper {
+}
+
+.search-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .search-form {
+}
+
+.search-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,10 +127,9 @@ nav {
     max-width: 800px;
     width: 100%;
     flex-wrap: nowrap;
-  }
-  
-  /* Input */
-  .search-form input[type="search"] {
+}
+
+.search-form input[type="search"] {
     flex: 1;
     padding: 15px 20px;
     font-size: 16px;
@@ -142,14 +138,13 @@ nav {
     background-color: #1a1a1a;
     color: #ffffff;
     min-width: 0;
-  }
-  
-  .search-form input::placeholder {
+}
+
+.search-form input::placeholder {
     color: #aaa;
-  }
-  
-  /* Button */
-  .search-form button {
+}
+
+.search-form button {
     padding: 15px 30px;
     font-size: 20px;
     background-color: #0CC359;
@@ -159,12 +154,12 @@ nav {
     cursor: pointer;
     white-space: nowrap;
     transition: background-color 0.3s ease;
-  }
-  
-  .search-form button:hover {
+}
+
+.search-form button:hover {
     background-color: #ffffff;
     color: #0CC359;
-  }
+}
 
 #home-section-4 {
     padding-bottom: 100px;
@@ -184,7 +179,6 @@ nav {
     padding-bottom: 50px;
 }
 
-/* Buttons */
 #home-join-btn, #plan-subscribe-btn, #bmi-calc div button {
     padding: 15px 30px;
     font-size: 20px;
@@ -202,7 +196,6 @@ nav {
     color: #0CC359;
 }
 
-/* Blog Section */
 .home-blog-section {
     text-align: left;
     padding-top: 100px;
@@ -234,7 +227,6 @@ nav {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Membership Plans */
 #membership-title {
     color: #0CC359;
 }
@@ -254,7 +246,6 @@ nav {
     padding: 10px;
 }
 
-/* Plan Cards */
 #plan-bronze, #plan-silver, #plan-gold {
     background-color: #121212;
     height: 600px;
@@ -274,7 +265,6 @@ nav {
     background-color: #FFD700;
 }
 
-/* Additional Offers */
 #additional-offers {
     display: flex;
     flex-direction: column;
@@ -304,7 +294,6 @@ nav {
     font-weight: 500;
 }
 
-/* BMI Calculator */
 #bmi-calc div input {
     width: 400px;
     height: 100px;
@@ -319,7 +308,6 @@ nav {
     font-size: 20pt;
 }
 
-/* Feedback Section */
 #feedback-card {
     background-color: #fff;
     height: 250px;
@@ -343,7 +331,6 @@ nav {
     color: #fff;
 }
 
-/* User Image */
 .user-img {
     width: 180px;
     height: 180px;
@@ -352,7 +339,6 @@ nav {
     border-radius: 50%;
 }
 
-/* Home Posts Button */
 #home-posts-btn {
     transition: transform 0.3s ease-in-out;
 }

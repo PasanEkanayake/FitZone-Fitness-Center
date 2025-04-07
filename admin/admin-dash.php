@@ -36,23 +36,23 @@
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./personal-training.html">Personal Training</a></li>
-                        <li><a class="dropdown-item" href="./group-classes.html">Group Classes</a></li>
-                        <li><a class="dropdown-item" href="./nutrition-counseling.html">Nutrition Counseling</a></li>
-                        <li><a class="dropdown-item" href="./wellness-programs.html">Wellness Programs</a></li>
+                        <li><a class="dropdown-item" href="../pages/personal-training.html">Personal Training</a></li>
+                        <li><a class="dropdown-item" href="../pages/group-classes.html">Group Classes</a></li>
+                        <li><a class="dropdown-item" href="../pages/nutrition-counseling.html">Nutrition Counseling</a></li>
+                        <li><a class="dropdown-item" href="../pages/wellness-programs.html">Wellness Programs</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">About</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./facilities.html">Our Facilities</a></li>
-                        <li><a class="dropdown-item" href="./trainers.html">Our Trainers</a></li>
-                        <li><a class="dropdown-item" href="./specialties.html">Our Specialties</a></li>
-                        <li><a class="dropdown-item" href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                        <li><a class="dropdown-item" href="../pages/facilities.html">Our Facilities</a></li>
+                        <li><a class="dropdown-item" href="../pages/trainers.html">Our Trainers</a></li>
+                        <li><a class="dropdown-item" href="../pages/specialties.html">Our Specialties</a></li>
+                        <li><a class="dropdown-item" href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                       </ul>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./contact.html">Contact</a>
+                      <a class="nav-link" href="../pages/contact.html">Contact</a>
                     </li>
                   </ul>
                   
@@ -150,8 +150,8 @@
                           <ul>
                               <li><a href="../index.php">Home</a></li>
                               <li><a href="../index.php#home-section-3">Memberships</a></li>
-                              <li><a href="./personal-training.html">Personal Training</a></li>
-                              <li><a href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                              <li><a href="../pages/personal-training.html">Personal Training</a></li>
+                              <li><a href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                               <li><a href="../pages/contact.html">Contact Us</a></li>
                           </ul>
                       </div>

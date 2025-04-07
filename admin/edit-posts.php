@@ -18,7 +18,7 @@
         mysqli_stmt_bind_param($stmt, "ssi", $title, $content, $id);
 
         if (mysqli_stmt_execute($stmt)) {
-            echo "<script>alert('Post updated successfully!'); window.location.href='../pages/blog.php';</script>";
+            echo "<script>alert('Post updated successfully!'); window.location.href='./admin-dash.php';</script>";
         } else {
             echo "Error updating post.";
         }
@@ -35,7 +35,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./personal-training.css">
+        <link rel="stylesheet" type="text/css" href="./edit-posts.css">
         <script src="./personal-training.js"></script>
     </head>
     <body id="personal-training-body">
@@ -55,28 +55,28 @@
                       <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="../pages/blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./personal-training.html">Personal Training</a></li>
-                        <li><a class="dropdown-item" href="./group-classes.html">Group Classes</a></li>
-                        <li><a class="dropdown-item" href="./nutrition-counseling.html">Nutrition Counseling</a></li>
-                        <li><a class="dropdown-item" href="./wellness-programs.html">Wellness Programs</a></li>
+                        <li><a class="dropdown-item" href="../pages/personal-training.html">Personal Training</a></li>
+                        <li><a class="dropdown-item" href="../pages/group-classes.html">Group Classes</a></li>
+                        <li><a class="dropdown-item" href="../pages/nutrition-counseling.html">Nutrition Counseling</a></li>
+                        <li><a class="dropdown-item" href="../pages/wellness-programs.html">Wellness Programs</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">About</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./facilities.html">Our Facilities</a></li>
-                        <li><a class="dropdown-item" href="./trainers.html">Our Trainers</a></li>
-                        <li><a class="dropdown-item" href="./specialties.html">Our Specialties</a></li>
-                        <li><a class="dropdown-item" href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                        <li><a class="dropdown-item" href="../pages/facilities.html">Our Facilities</a></li>
+                        <li><a class="dropdown-item" href="../pages/trainers.html">Our Trainers</a></li>
+                        <li><a class="dropdown-item" href="../pages/specialties.html">Our Specialties</a></li>
+                        <li><a class="dropdown-item" href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                       </ul>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./contact.html">Contact</a>
+                      <a class="nav-link" href="../pages/contact.html">Contact</a>
                     </li>
                   </ul>
                   
@@ -116,8 +116,8 @@
                           <ul>
                               <li><a href="../index.php">Home</a></li>
                               <li><a href="../index.php#home-section-3">Memberships</a></li>
-                              <li><a href="./personal-training.html">Personal Training</a></li>
-                              <li><a href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                              <li><a href="../pages/personal-training.html">Personal Training</a></li>
+                              <li><a href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                               <li><a href="../pages/contact.html">Contact Us</a></li>
                           </ul>
                       </div>

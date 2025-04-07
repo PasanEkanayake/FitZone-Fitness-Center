@@ -28,7 +28,6 @@ nav{
     text-align: left;
 }
 
-/* General Container Styling */
 .search-results-container {
     max-width: 1000px;
     margin: 60px auto;
@@ -36,19 +35,17 @@ nav{
     background-color: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 204, 89, 0.3);
-  }
-  
-  /* Heading */
-  .search-results-container h2 {
+}
+
+.search-results-container h2 {
     font-size: 24pt;
     color: #0CC359;
     border-bottom: 2px solid #0CC359;
     padding-bottom: 10px;
     margin-bottom: 30px;
-  }
-  
-  /* Individual result cards */
-  .search-result-card {
+}
+
+.search-result-card {
     background-color: #121212;
     border: 2px solid #0CC359;
     padding: 20px;
@@ -56,131 +53,120 @@ nav{
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
     color: #ffffff;
-  }
-  
-  .search-result-card:hover {
+}
+
+.search-result-card:hover {
     transform: translateY(-5px);
-  }
-  
-  /* Title of each result */
-  .search-result-card h4 {
+}
+
+.search-result-card h4 {
     font-size: 16pt;
     color: #0CC359;
     margin-bottom: 10px;
-  }
-  
-  .search-result-card h4 small {
+}
+
+.search-result-card h4 small {
     color: #aaaaaa;
     font-size: 10pt;
     margin-left: 10px;
-  }
-  
-  /* Description snippet */
-  .search-result-card p {
+}
+
+.search-result-card p {
     font-size: 12pt;
     color: #dddddd;
     margin-bottom: 0;
-  }
+}
 
-  /* Trainer image */
-  .search-result-card img {
+.search-result-card img {
     width: 120px;
     height: 120px;
     border-radius: 20%;
     object-fit: cover;
-    /* margin-right: 20px; */
     border: 3px solid #0CC359;
-  }
+}
 
-  .trainer-avatar {
+.trainer-avatar {
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .search-results-container a {
+.search-results-container a {
     color: #0CC359;
     margin-top: 15px;
-  }
+}
 
-  .trainer-avatar h6 {
+.trainer-avatar h6 {
     color: #FFFFFF;
     margin-top: 10px;
-  }
-  
-  /* No results found */
-  .no-results {
+}
+
+.no-results {
     font-size: 14pt;
     color: #FFFFFF;
     margin-top: 30px;
     text-align: center;
-  }
+}
   
-  /* --- Clean and precise Search Section Styling --- */
-
 #home-section-2 {
-  padding: 60px 20px;
-  background-color: #0a0a0a;
+    padding: 60px 20px;
 }
 
 .search-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  max-width: 800px;
-  width: 100%;
-  flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
-/* Input */
 .search-form input[type="search"] {
-  flex: 1;
-  padding: 15px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 2px solid #0CC359;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  min-width: 0;
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
 }
 
 .search-form input::placeholder {
-  color: #aaa;
+    color: #aaa;
 }
 
-/* Button */
 .search-form button {
-  padding: 15px 30px;
-  font-size: 16px;
-  background-color: #0CC359;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background-color 0.3s ease;
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #0CC359;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .search-form button:hover {
-  background-color: #ffffff;
-  color: #0CC359;
+    background-color: #ffffff;
+    color: #0CC359;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .search-form {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-  .search-form input,
-  .search-form button {
-    width: 100%;
-  }
+    .search-form input,
+    .search-form button {
+        width: 100%;
+    }
 }
