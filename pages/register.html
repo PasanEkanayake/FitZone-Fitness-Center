@@ -76,7 +76,9 @@
                     </div>
                     <div class="email-input-box">
                         <input type="email" id="email" name="email" placeholder="*Email" required>
-                        <span id="errormessage"></span>
+                    </div>
+                    <div class="span-error-message">
+                      <span id="errormessage"></span>
                     </div>
                     <div class="measurement-input-box">
                         <input type="number" id="weight" name="weight" placeholder="Your Weight in Kilograms (kg)">
@@ -86,14 +88,17 @@
                     </div>
                     <div class="username-input-box">
                       <input type="text" id="username" name="username" placeholder="*Username" required>
+                    </div>
+                    <div class="span-error-message">
                       <span id="usernameerror" class="error"></span>
                     </div>
                     <div class="password-input-box">
                       <input type="password" id="password" name="password" placeholder="*Password" required>
                       <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
+                    </div>
+                    <div class="span-error-message">
                       <span id="passworderror" class="error"></span>
                     </div>
-                    <label for="password">(password must contain at least 8 characters)</label>
                     <div class="password-input-box">
                       <input type="password" id="confirm-password" name="confirm-password" placeholder="*Confirm Password" required>
                       <img src="../public/images/eye-close.png" id="confirm-eye-icon" onclick="showConfirmPassword()">

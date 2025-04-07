@@ -203,6 +203,11 @@ nav{
     cursor: pointer;
 }
 
+.span-error-message {
+    font-size: 12pt;
+    margin-top: 5px;
+}
+
 .register-form p{
     font-size: 16pt;
     font-weight: 300;
