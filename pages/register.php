@@ -42,12 +42,13 @@
         }
 
         // Check if password already exists in the database
-        $checkPassword = $conn->prepare("SELECT password FROM members");
+        $checkPassword = $conn->prepare("SELECT password FROM members WHERE password = ?");
+        $checkPassword->bind_param("s", $password);
         $checkPassword->execute();
         $checkPassword->store_result();
 
         if ($checkPassword->num_rows > 0) {
-            echo "<script>alert('This password is already in use! Choose a different one.'); window.history.back();</script>";
+            echo "<script>alert('Entered Password is invalid.! Choose a different one.'); window.history.back();</script>";
             exit();
         }
         $checkPassword->close();
@@ -57,7 +58,7 @@
         $stmt->bind_param("sssddss", $first_name, $last_name, $email, $weight, $height, $username, $password);
     
         if ($stmt->execute()) {
-            echo "<script>alert('Registration Successful! Redirecting to login...'); window.location.href='../index.php';</script>";
+            echo "<script>alert('Registration Successful! Welcome to FitZone Fitness Center...'); window.location.href='../index.php';</script>";
         } else {
             echo "Error: " . $stmt->error;
         }

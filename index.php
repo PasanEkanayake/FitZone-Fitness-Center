@@ -126,7 +126,7 @@
                       <h5 class="card-title text-bg-danger">No group classes</h5>
                       <p class="card-text text-bg-light"><b>Best for:</b> Beginners or casual gym-goers who want to work out independently.</p>
                     </div>
-                    <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
+                    <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn" data-bs-toggle="modal" data-bs-target="#paymentModal">Subscribe</a></div>
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -141,7 +141,7 @@
                         <h5 class="card-title text-bg-danger">No Sauna & spa access</h5>
                         <p class="card-text text-bg-light"><b>Best for:</b> Individuals looking for structured workouts and occasional trainer support.</p>
                       </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
+                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn" data-bs-toggle="modal" data-bs-target="#paymentModal">Subscribe</a></div>
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -156,7 +156,7 @@
                         <h5 class="card-title text-bg-success">Exclusive gym events & workshops</h5>
                         <p class="card-text text-bg-light"><b>Best for:</b> Serious fitness enthusiasts who want full support and premium facilities.</p>
                       </div>
-                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn">Subscribe</a></div>
+                      <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn" id="plan-subscribe-btn" data-bs-toggle="modal" data-bs-target="#paymentModal">Subscribe</a></div>
                   </div>
                 </div>
               </div>
@@ -166,6 +166,71 @@
                 <p><b>Student Discount:</b> 10% off on all plans with a valid student ID.</p>
               </div>
             </div>
+
+            <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Subscription Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="plan" class="form-label">Choose Your Plan</label>
+                        <select class="form-select" id="plan" required>
+                          <option value="gold">Premium Plan (Gold) - $70/month</option>
+                          <option value="silver">Standard Plan (Silver) - $40/month</option>
+                          <option value="bronze">Basic Plan (Bronze) - $20/month</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="nameOnCard" class="form-label">Name on Card</label>
+                        <input type="text" class="form-control" id="nameOnCard" placeholder="John Doe" required>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="cardNumber" class="form-label">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="expiry" class="form-label">Expiry Date</label>
+                          <input type="text" class="form-control" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="cvv" class="form-label">CVV</label>
+                          <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="3" required>
+                        </div>
+                      </div>
+
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</button>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <h4>FitZone Online payment system isn't available yet. You can make you payments at the FitZone Fitness Center.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </section>
           <section id="home-section-4">
             <div class="section-titles">

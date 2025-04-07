@@ -459,3 +459,115 @@ nav {
     border-radius: 50%;
     padding: 10px;
 }
+
+/* #paymentModal input {
+    width: 100%;
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
+} */
+
+#subscribeModal .modal-content {
+    background: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  #subscribeModal h4 {
+      color: #0CC359;
+  }
+
+#paymentModal .modal-content {
+    background: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  #paymentModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  #paymentModalLabel {
+      color: #0CC359;
+  }
+
+  #paymentModal .modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  #paymentModal .modal-body {
+    padding: 2rem;
+  }
+
+  #paymentModal .form-label {
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+
+  #paymentModal .form-control,
+  #paymentModal .form-select {
+    width: 100%;
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
+  }
+
+  #paymentModal .form-control::placeholder {
+    color: #767676;
+  }
+
+  #paymentModal .form-control:focus,
+  #paymentModal .form-select:focus {
+    border-color: #0CC359;
+    box-shadow: 0 0 0 0.2rem rgba(12, 195, 89, 0.25);
+  }
+
+  #paymentModal .btn-success {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #0CC359;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+
+  #paymentModal .btn-success:hover {
+    background-color: #FFFFFF;
+    color: #0CC359;
+  }
+
+  #paymentModal .btn-close {
+    filter: invert(1);
+  }
+
+  @media (max-width: 576px) {
+    #paymentModal .modal-body {
+      padding: 1.5rem 1rem;
+    }
+
+    #paymentModal .modal-dialog {
+      margin: 1rem;
+    }
+  }
