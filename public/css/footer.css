@@ -123,6 +123,15 @@ hr{
     text-align: center;
 }
 
+.copyright a{
+    color: #0CC359;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: #0000FF;
+}
+
 .quick-links {
     display: flex;
     flex-direction: column;

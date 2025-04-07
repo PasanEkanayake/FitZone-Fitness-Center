@@ -167,22 +167,18 @@
               <div class="section-titles">
                 <h3 class="display-4">What is your BMI? <div class="section-underline"><span></span></h3>
               </div>
-              <div class="container-fluid">
-                <div class="raw m-0 px-5" id="bmi-calc">
-                  <div class="col-md-5 text-center">
-                    <!-- <label for="height">Your Height</label> -->
-                    <input type="number" id="height" name="height" placeholder="Height in centimeters (cm)" required>
-                    <input type="number" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
-                  </div>
-                  <div class="col-md-2 text-center">
-                    <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-                  </div>
-                  <div class="col-md-5 text-center">
-                    <!-- <label for="bmi">Your BMI</label> -->
-                    <input type="text" id="bmi-result" name="bmi-result" placeholder="BMI" readonly><br>
-                    <!-- <label for="bmi-condition">Condition</label> -->
-                    <input type="text" id="bmi-condition" name="bmi-condition" placeholder="Condition" readonly>
-                  </div>
+              <div class="bmi-calc-container">
+                <div class="bmi-calc-inputs">
+                  <input type="number" id="height" name="height" placeholder="Height in centimeters (cm)" required>
+                  <input type="number" id="weight" name="weight" placeholder="Weight in kilograms (kg)" required>
+                </div>
+                <div class="bmi-calc-btn">
+                  <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+                  <button type="button" onclick="resetBMI()">Reset</button>
+                </div>
+                <div class="bmi-calc-results">
+                  <input type="text" id="bmi-result" name="bmi-result" placeholder="BMI" readonly>
+                  <input type="text" id="bmi-condition" name="bmi-condition" placeholder="Condition" readonly>
                 </div>
               </div>
             </section>

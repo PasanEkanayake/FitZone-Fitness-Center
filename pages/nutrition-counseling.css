@@ -38,6 +38,7 @@ nav{
     flex-direction: column;
     align-items: left;
     background-color: #121212;
+    border: 2px solid #1fd072;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -71,6 +72,7 @@ li {
     flex-direction: column;
     align-items: center;
     background-color: #121212;
+    border: 2px solid #1fd072;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -80,13 +82,27 @@ li {
     margin: auto;
 }
 
-.consultation-form input, 
+/* .consultation-form input, 
 .consultation-form textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+} */
+
+.consultation-form input, 
+.consultation-form textarea {
+    width: 100%;
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
 }
 
 .consultation-form button {

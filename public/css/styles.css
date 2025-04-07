@@ -350,7 +350,9 @@ nav {
 .bmi-calc-container {
     background-color: #1a1a1a;
     padding: 40px 30px;
-    border-radius: 12px;
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -379,7 +381,7 @@ nav {
 }
 
 .bmi-calc-container input {
-    background-color: #121212;
+    background-color: #1a1a1a;
     border: 2px solid #0CC359;
     color: #ffffff;
     padding: 12px 15px;
@@ -394,7 +396,7 @@ nav {
 
 .bmi-calc-container input:focus {
     outline: none;
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
     border-color: #10e070;
 }
 

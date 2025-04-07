@@ -49,6 +49,7 @@ nav{
 .carousel-inner {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #0CC359;
 }
 
 .carousel-caption {
@@ -57,6 +58,12 @@ nav{
     border-radius: 10px;
     backdrop-filter: blur(4px);
     flex-direction: column;
+    border: 2px solid #0CC359;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-caption:hover {
+    transform: translateY(-5px);
 }
 
 .carousel-caption h5 {

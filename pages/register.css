@@ -29,7 +29,9 @@ nav{
     font-size: 40pt;
     font-weight: 700;
     color: #0CC359;
-    background-color: #000000;
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
     padding: 30px 20px;
 }
 
@@ -37,7 +39,9 @@ nav{
     font-size: 30pt;
     font-weight: 500;
     color: #fff;
-    background-color: #000000;
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
     padding: 30px 20px;
 }
 
@@ -46,11 +50,11 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
-    background-image: url(../public/images/pattern-bg-img.png);
     margin: 100px 0;
     padding: 50px;
-    border-radius: 50px;
+    background-color: #121212;
+    border: 2px solid #0CC359;
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -63,16 +67,22 @@ nav{
 .register-form label{
     font-size: 12pt;
     font-weight: 500;
-    color: #0CC359;
+    color: #949494;
+    margin-top: 5px;
+    text-align: left;
 }
 
 .name-input-box{
-    background: #fff;
     width: 100%;
-    max-width: 500px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px auto;
+    flex: 1;
+    padding: 3px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -82,8 +92,24 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
-    color: #555;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: none;
+}
+
+.email-input-box{
+    width: 100%;
+    flex: 1;
+    padding: 3px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .email-input-box input{
@@ -91,28 +117,22 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
-    color: #555;
-}
-
-.email-input-box{
-    background: #fff;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px auto;
-    display: flex;
-    align-items: center;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: none;
 }
 
 .measurement-input-box{
-    background: #fff;
     width: 100%;
-    max-width: 500px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px auto;
+    flex: 1;
+    padding: 3px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -122,17 +142,22 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
-    color: #555;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: none;
 }
 
 .username-input-box{
-    background: #fff;
     width: 100%;
-    max-width: 500px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px auto;
+    flex: 1;
+    padding: 3px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -142,17 +167,22 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
-    color: #555;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: none;
 }
 
 .password-input-box{
-    background: #fff;
     width: 100%;
-    max-width: 500px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin: 10px auto;
+    flex: 1;
+    padding: 3px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #0CC359;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-width: 0;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -162,8 +192,9 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 18px;
-    color: #555;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: none;
 }
 
 .password-input-box img{
@@ -175,8 +206,19 @@ nav{
 .register-form p{
     font-size: 16pt;
     font-weight: 300;
-    color: #000000;
+    color: #FFFFFF;
     margin-top: 30px;
+}
+
+.register-form a{
+    font-size: 16pt;
+    font-weight: 300;
+    color: #0CC359;
+    margin-top: 30px;
+}
+
+.register-form a:hover {
+    color: #0000FF;
 }
 
 .register-form p a{
@@ -198,8 +240,8 @@ nav{
 }
 
 .btn:hover{
-    background-color: #000000;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: #0CC359;
 }
 
 #home-join-btn {
