@@ -11,7 +11,7 @@
             VALUES ('$name', '$email', '$contact', '$package')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('You have successfully reserved your training sessions.!'); window.history.back();</script>";
+        echo "<script>alert('You have successfully reserved your training sessions.!'); window.location.href='personal-training.html';</script>";
     } else {
         echo "Error: " . $conn->error;
     }

@@ -12,7 +12,7 @@
             VALUES ('$name', '$email', '$phone', '$goals')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "<script>alert('Your request has been sent successfully. One of our counsellors will contact you soon.'); window.history.back();</script>";
+    echo "<script>alert('Your request has been sent successfully. One of our counsellors will contact you soon.'); window.location.href='nutrition-counseling.html';</script>";
     } else {
     echo "Error: " . $conn->error;
     }
