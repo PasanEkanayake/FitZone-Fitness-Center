@@ -260,7 +260,7 @@
               </div>
             </div>
           </section>
-          <section id="home-section-5">
+          <section id="home-section-5" class="justify-content-center">
             <div class="row m-0 p-0 g-0">
               <div class="col-md-6 col-sm-12">
                 <div class="container d-block m-0">
