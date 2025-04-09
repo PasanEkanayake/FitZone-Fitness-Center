@@ -1,15 +1,52 @@
+<?php
+    include './db-connection.php';
+
+    $token = $_GET['token'];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $newPass = $_POST['new-password'];
+        $confirmPass = $_POST['confirm-password'];
+
+        if ($newPass !== $confirmPass) {
+            echo "<script>alert('Passwords do not match'); window.history.back();</script>";
+            exit();
+        }
+
+        $stmt = $conn->prepare("SELECT email FROM password_resets WHERE token = ?");
+        $stmt->bind_param("s", $token);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($row = $result->fetch_assoc()) {
+            $email = $row['email'];
+
+            $update = $conn->prepare("UPDATE members SET password = ? WHERE email = ?");
+            $update->bind_param("ss", $newPass, $email);
+            $update->execute();
+
+            $del = $conn->prepare("DELETE FROM password_resets WHERE email = ?");
+            $del->bind_param("s", $email);
+            $del->execute();
+
+            echo "<script>alert('Password reset successful!'); window.location.href='../pages/login.html';</script>";
+        } else {
+            echo "<script>alert('Invalid or expired token.'); window.location.href='forgot-password.php';</script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login | FitZone Fitness Center</title>
+        <title>Forgot Password? | FitZone Fitness Center</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="./login.css">
-        <script src="./login.js"></script>
+        <link rel="stylesheet" type="text/css" href="./reset-password.css">
+        <script src="./wellness-programs.js"></script>
     </head>
-    <body id="login-body">
+    <body id="group-classes-body">
         <header>
             <nav class="navbar navbar-expand-xxl" id="navbar" style="background-color: #121212;">
               <div class="container-fluid">
@@ -20,30 +57,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-items">
                     <li class="nav-item px-4">
-                      <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                      <a class="nav-link active" aria-current="page" href="../public/pages/index.php">Home</a>
                     </li>
                     <li class="nav-item px-4">
                       <a class="nav-link" href="../index.php#home-section-3">Memberships</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" href="./blog.php">Blog</a>
+                      <a class="nav-link" href="../pages/blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./personal-training.html">Personal Training</a></li>
-                        <li><a class="dropdown-item" href="./group-classes.html">Group Classes</a></li>
-                        <li><a class="dropdown-item" href="./nutrition-counseling.html">Nutrition Counseling</a></li>
-                        <li><a class="dropdown-item" href="./wellness-programs.html">Wellness Programs</a></li>
+                        <li><a class="dropdown-item" href="../pages/personal-training.html">Personal Training</a></li>
+                        <li><a class="dropdown-item" href="../pages/group-classes.html">Group Classes</a></li>
+                        <li><a class="dropdown-item" href="../pages/nutrition-counseling.html">Nutrition Counseling</a></li>
+                        <li><a class="dropdown-item" href="../pages/wellness-programs.html">Wellness Programs</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown px-4">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">About</a>
                       <ul class="dropdown-menu" style="background-color: #121212;" id="about-dropdown">
-                        <li><a class="dropdown-item" href="./facilities.html">Our Facilities</a></li>
-                        <li><a class="dropdown-item" href="./trainers.html">Our Trainers</a></li>
-                        <li><a class="dropdown-item" href="./specialties.html">Our Specialties</a></li>
-                        <li><a class="dropdown-item" href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                        <li><a class="dropdown-item" href="../pages/facilities.html">Our Facilities</a></li>
+                        <li><a class="dropdown-item" href="../pages/trainers.html">Our Trainers</a></li>
+                        <li><a class="dropdown-item" href="../pages/specialties.html">Our Specialties</a></li>
+                        <li><a class="dropdown-item" href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                       </ul>
                     </li>
                     <li class="nav-item px-4">
@@ -55,35 +92,18 @@
               </div>
             </nav>
         </header>
-        <main>
-            <div class="main">
-              <div class="raw m-0" id="login-section">
-                <div class="col-md-6">
-                  <div class="login-text-section">
-                    <h1 class="display-4">Welcome back to<br> FitZone Fitness Center</h1>
-                    <h4>Let's resume your journey to fitness again!</h4>
-                  </div>
+        
+        <div class="password-reset">
+            <form method="POST" class="reset-form">
+                <div class="heading">
+                    <h2>Reset Password <div class="section-underline"><span></span></h2>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                  <form action="./login.php" method="post" class="login-form">
-                    <h1>Login <div class="section-underline"><span></span></h1><br><br>
-                    <div class="username-input-box">
-                      <input type="text" id="username" name="username" placeholder="Enter Username">
-                    </div>
-                    <div class="password-input-box">
-                      <input type="password" id="password" name="password" placeholder="Enter Password">
-                      <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
-                    </div>
-                    <button type="submit" class="btn">Login</button>
-                    <div class="forgot-password">
-                      <p><a href="../includes/forgot-password.php">Forgot your password?</a></p>
-                    </div>
-                    <p>Not registered yet? <a href="register.html">Register now</a></p>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </main>
+                <input type="password" name="new-password" placeholder="New password" required>
+                <input type="password" name="confirm-password" placeholder="Confirm password" required>
+                <button type="submit">Reset Password</button>
+            </form>
+        </div>
+
         <div id="footer">
             <footer>
               <div class="container-fluid">
@@ -106,8 +126,8 @@
                           <ul>
                               <li><a href="../index.php">Home</a></li>
                               <li><a href="../index.php#home-section-3">Memberships</a></li>
-                              <li><a href="./personal-training.html">Personal Training</a></li>
-                              <li><a href="./rules-and-egulations.html">Our Rules and Regulations</a></li>
+                              <li><a href="../pages/personal-training.html">Personal Training</a></li>
+                              <li><a href="../pages/rules-and-egulations.html">Our Rules and Regulations</a></li>
                               <li><a href="../pages/contact.html">Contact Us</a></li>
                           </ul>
                       </div>
