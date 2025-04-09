@@ -31,18 +31,6 @@
             echo "<script>alert('Username already exists!'); window.history.back();</script>";
             exit();
         }
-
-        // Check if password already exists in the database
-        $checkPassword = $conn->prepare("SELECT password FROM members WHERE password = ?");
-        $checkPassword->bind_param("s", $password);
-        $checkPassword->execute();
-        $checkPassword->store_result();
-
-        if ($checkPassword->num_rows > 0) {
-            echo "<script>alert('Entered Password is invalid.! Choose a different one.'); window.history.back();</script>";
-            exit();
-        }
-        $checkPassword->close();
     
         // Insert data in the database
         $stmt = $conn->prepare("INSERT INTO members (first_name, last_name, email, weight, height, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)");

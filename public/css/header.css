@@ -48,9 +48,9 @@
 }
 
 #logout-btn{
-    padding: 10px 30px;
+    padding: 5px 20px;
     font-size: 20px;
-    background-color: #dc3545;
+    background-color: #DC3545;
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -61,7 +61,7 @@
 
 #logout-btn:hover{
     background-color: #fff;
-    color: #0CC359;
+    color: #DC3545;
 }
 
 .navbar-toggler-icon {

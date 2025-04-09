@@ -12,6 +12,5 @@ document.getElementById("training-form").addEventListener("submit", function(eve
         document.getElementById("form-message").textContent = "Please enter a valid 10-digit contact number.";
         document.getElementById("form-message").style.color = "red";
     } else {
-        // Let the form submit
     }
 });

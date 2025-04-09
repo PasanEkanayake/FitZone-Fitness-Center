@@ -1,14 +1,12 @@
 <?php
-    include '../includes/db-connection.php'; // Database connection
+    include '../includes/db-connection.php';
 
-    // Retrieve form data
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $class_type = trim($_POST['class_type']);
     $contact = trim($_POST['contact']);
     $date = $_POST['date'];
 
-    // Insert into DB
     $sql = "INSERT INTO group_class_bookings (name, email, contact_no, class_type, class_date) 
             VALUES ('$name', '$email', '$contact', '$class_type', '$date')";
 

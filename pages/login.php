@@ -19,7 +19,6 @@
         $user = $result->fetch_assoc();
         $_SESSION['user_id'] = $user['member_id'];
         $_SESSION['username'] = $user['username'];
-        // echo "<script>alert('You have successfully logged in.'); window.location.href='../index.php';</script>";
         header("Location: ../index.php");
         exit();
     }else{

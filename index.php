@@ -84,7 +84,6 @@
                 <div class="home-welcome-section">
                   <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
                   <h4>Your journey to fitness starts here!</h4>
-                  <!-- <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button> -->
                   <?php if (isset($_SESSION['user_id'])): ?>
                   <?php else: ?>
                     <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
@@ -263,10 +262,8 @@
           </section>
           <section id="home-section-5">
             <div class="row m-0 p-0 g-0">
-              <!-- First Column: Recent Blog Posts -->
               <div class="col-md-6 col-sm-12">
                 <div class="container d-block m-0">
-                  <!-- Most Recent Blog Post 1 -->
                   <?php while ($row = $result->fetch_assoc()): ?>
                   <div class="row mt-4">
                     <a href="./pages/blog-view.php?post_id=<?= $row['post_id']; ?>" style="text-decoration: none;" id="home-posts-btn">
@@ -290,7 +287,6 @@
                 </div>
               </div>
 
-              <!-- Second Column: Blog Call-to-Action -->
               <div class="col-md-6 col-sm-12">
                 <div class="home-blog-section">
                   <h1 class="display-4">Are you <br> new to the GYM life?</h1>

@@ -1,5 +1,5 @@
 <?php
-    include '../includes/db-connection.php'; // Database connection
+    include '../includes/db-connection.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = trim($_POST['name']);
@@ -12,7 +12,6 @@
             exit();
         }
 
-        // Insert into database
         $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $name, $email, $subject, $message);
 

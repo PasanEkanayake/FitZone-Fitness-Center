@@ -177,7 +177,6 @@
 </html>
 
 <?php
-  // Close the database connection
   $stmt->close();
   $conn->close();
 ?>
