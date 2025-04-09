@@ -265,11 +265,11 @@
               <div class="col-md-6 col-sm-12">
                 <div class="container d-block m-0">
                   <?php while ($row = $result->fetch_assoc()): ?>
-                  <div class="row mt-4">
+                  <div class="row">
                     <a href="./pages/blog-view.php?post_id=<?= $row['post_id']; ?>" style="text-decoration: none;" id="home-posts-btn">
                       <div class="card mb-3 mx-3" style="max-width: 700px; background-color: #121212; border: 2px solid #0CC359;">
                         <div class="row">
-                          <div class="col-md-4 overflow-hidden">
+                          <div class="col-md-4 overflow-hidden" id="home-blog-img">
                             <img src="./uploads/<?= $row['image']; ?>" class="img-fluid" alt="Blog Image" style="max-width: 350px;">
                           </div>
                           <div class="col-md-8">
