@@ -1,16 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "fitzone-fitness-center";
+    session_start();
 
-    // Connection to the Database
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    // Checking the database connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include '../includes/db-connection.php';
 
     // Get Username and Password from Login Form
     $userName = trim($_POST['username']);
@@ -25,7 +16,12 @@
 
     // Check if the user is a registered memeber
     if($result->num_rows == 1){
-        echo "<script>alert('You have successfully logged in.'); window.location.href='../index.php';</script>";
+        $user = $result->fetch_assoc();
+        $_SESSION['user_id'] = $user['member_id'];
+        $_SESSION['username'] = $user['username'];
+        // echo "<script>alert('You have successfully logged in.'); window.location.href='../index.php';</script>";
+        header("Location: ../index.php");
+        exit();
     }else{
         echo "<script>alert('Username or Password is incorrect! Try again.'); window.history.back();</script>";
     }

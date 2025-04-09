@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include '../includes/db-connection.php';
 
     $categoryFilter = $_GET['category'] ?? '';
@@ -68,7 +70,9 @@
                   </ul>
                   
                 </div>
+                <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
                 <button class="btn mx-4" type="button" id="manage-posts-btn" onclick="location.href='../admin/admin-dash.php'">Manage Posts</button>
+                <?php endif; ?>
               </div>
             </nav>
         </header>

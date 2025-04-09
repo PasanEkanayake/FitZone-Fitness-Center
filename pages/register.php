@@ -1,16 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "fitzone-fitness-center";
+    session_start();
 
-    // Connection to the Database
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    // Checking the database connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include '../includes/db-connection.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -58,6 +49,9 @@
         $stmt->bind_param("sssddss", $first_name, $last_name, $email, $weight, $height, $username, $password);
     
         if ($stmt->execute()) {
+            $new_user_id = $stmt->insert_id;
+            $_SESSION['user_id'] = $new_user_id;
+            $_SESSION['username'] = $username;
             echo "<script>alert('Registration Successful! Welcome to FitZone Fitness Center...'); window.location.href='../index.php';</script>";
         } else {
             echo "Error: " . $stmt->error;

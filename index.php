@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include './includes/db-connection.php';
 
     $sql = "SELECT * FROM blog_posts ORDER BY created_at DESC LIMIT 2";
@@ -67,7 +69,11 @@
                   </li>
                 </ul>
               </div>
-              <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button>
+              <?php if (isset($_SESSION['user_id'])): ?>
+                <button class="btn mx-4" type="button" id="logout-btn" onclick="location.href='./includes/logout.php'">Logout</button>
+              <?php else: ?>
+                <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./pages/login.html'">Login</button>
+              <?php endif; ?>
             </div>
           </nav>
         </header>
@@ -78,7 +84,11 @@
                 <div class="home-welcome-section">
                   <h1 class="display-4">Welcome to<br> FitZone Fitness Center</h1>
                   <h4>Your journey to fitness starts here!</h4>
-                  <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
+                  <!-- <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button> -->
+                  <?php if (isset($_SESSION['user_id'])): ?>
+                  <?php else: ?>
+                    <button class="btn mx-4" type="button" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
+                  <?php endif; ?>
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
