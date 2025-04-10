@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2025 at 03:13 AM
+-- Generation Time: Apr 10, 2025 at 02:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -116,7 +116,10 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`member_id`, `first_name`, `last_name`, `email`, `weight`, `height`, `username`, `password`, `joined_at`) VALUES
-(1, 'Pasan', 'Ekanayake', 'pasanekanayake@gmail.com', 178, 78, 'Pasan Ekanayake', '12345678', '2025-04-09 00:46:20');
+(1, 'Pasan', 'Ekanayake', 'pasanekanayake@gmail.com', 178, 78, 'admin', '12345678', '2025-04-09 00:46:20'),
+(2, 'Kamindu', 'Mendis', 'kamindu@gmail.com', 189, 85, 'Kamindu Mendis', '11111111', '2025-04-09 03:34:29'),
+(3, 'Chathuri', 'Perera', 'chathuri@gmail.com', 165, 58, 'Chathuri', '22222222', '2025-04-09 03:36:49'),
+(4, 'Zach', 'Efron', 'zach@gmail.com', 165, 58, 'Zach Efron', '33333333', '2025-04-09 03:42:35');
 
 -- --------------------------------------------------------
 
@@ -144,6 +147,19 @@ INSERT INTO `nutrition_counseling` (`counseling_id`, `name`, `email`, `contact_n
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `reset_id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `expires_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services`
 --
 
@@ -152,6 +168,21 @@ CREATE TABLE `services` (
   `service_type` varchar(100) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`service_id`, `service_type`, `description`) VALUES
+(2, 'Group Classes', 'Choose from our variety of energizing group classes for all fitness levels.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(3, 'Nutrition Counseling', 'Our certified professionals create flexible, goal-based nutrition plans tailored to your lifestyle, fitness level, and goals.'),
+(4, 'Wellness Programs', 'Our Wellness Program is designed to improve not just your body, but your entire lifestyle. We focus on physical health, mental well-being, and nutritional support to help you live your best life.'),
+(5, 'Cardio Training', 'Our cardio training sessions include high-intensity workouts that improve heart health, endurance, and overall fitness. Ideal for weight loss and boosting stamina.'),
+(6, 'Strength Training\r\n', 'Build muscle and increase strength with our personalized strength training routines. Whether you\'re a beginner or advanced, we help you reach your strength goals.'),
+(7, 'Yoga', 'Our yoga classes provide mental relaxation, flexibility, and stress relief. From beginner to advanced levels, enjoy peaceful flow sequences that rejuvenate your body and mind.'),
+(8, 'Personal Training', 'Get one-on-one training with certified trainers who tailor programs to fit your needs. Whether for weight loss, strength, or injury recovery, our experts are here to help.'),
+(9, 'Spin Classes', 'Join our high-energy spin classes for an amazing cardio workout. Burn calories, improve cardiovascular health, and push your limits with every pedal.'),
+(10, 'Rehabilitation', 'Our rehab programs are designed for injury recovery. Work with experienced trainers to regain strength, flexibility, and mobility safely and effectively.');
 
 -- --------------------------------------------------------
 
@@ -166,6 +197,22 @@ CREATE TABLE `trainers` (
   `description` text NOT NULL,
   `trainer_photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `trainers`
+--
+
+INSERT INTO `trainers` (`trainer_id`, `name`, `specialty`, `description`, `trainer_photo`) VALUES
+(1, 'John Doe', 'Personal Training, Strength Training', 'John helps clients reach their fitness goals through personalized programs and focuses on strength and conditioning.', 'trainer-1.png'),
+(2, 'Jane Smith', 'Yoga, Flexibility & Mobility', 'Jane is an expert in yoga and focuses on flexibility and mindfulness to help individuals achieve their best self.', 'trainer-4.jpg'),
+(3, 'Michael Brown', 'Cardio, Endurance Training', 'Michael specializes in high-intensity cardio workouts that improve endurance and cardiovascular health.', 'trainer-2.jpg'),
+(4, 'Sarah Lee', 'Pilates, Core Strength', 'Sarah focus is on strengthening the core through Pilates and functional movement exercises.', 'trainer-5.jpg'),
+(5, 'Chris White', 'Weight Loss, Group Fitness', 'Chris specializes in group fitness classes designed to burn fat and build muscle.', 'trainer-3.jpg'),
+(6, 'Emily Turner', 'Strength Training, Weightlifting', 'Emily focuses on building strength and muscle with customized weightlifting plans.', 'trainer-6.jpg'),
+(7, 'David Green', 'Bootcamp, High-Intensity Training', 'David creates dynamic, high-energy bootcamp classes designed to challenge and push participants to their limits.', 'trainer-8.jpg'),
+(8, 'Olivia Harris', 'Nutrition & Wellness', 'Olivia specializes in nutrition counseling and creating personalized meal plans for clients.', 'trainer-7.jpg'),
+(9, 'Amy Robinson', 'Barre, Pilates Fusion', 'Amy integrates barre techniques with Pilates for a full-body workout that focuses on toning and flexibility.', 'trainer-10.jpg'),
+(10, 'Daniel Carter', 'Athletic Performance, Sports Training', 'Daniel helps athletes optimize their performance through specialized training programs that target agility, speed, and power.', 'trainer-9.jpg');
 
 -- --------------------------------------------------------
 
@@ -225,6 +272,12 @@ ALTER TABLE `nutrition_counseling`
   ADD PRIMARY KEY (`counseling_id`);
 
 --
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD PRIMARY KEY (`reset_id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -268,7 +321,7 @@ ALTER TABLE `group_class_bookings`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `nutrition_counseling`
@@ -277,16 +330,22 @@ ALTER TABLE `nutrition_counseling`
   MODIFY `counseling_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  MODIFY `reset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `service_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `service_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-  MODIFY `trainer_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `trainer_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `training_registrations`
