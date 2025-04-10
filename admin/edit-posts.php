@@ -86,7 +86,9 @@
         </header>
         
         <div class="blog-form-container">
-          <h2>Edit Blog Post</h2>
+          <div class="heading">
+            <h2>Edit Blog Post <div class="section-underline"><span></span></h2>
+          </div>
           <form method="POST">
               <input type="text" name="title" value="<?= htmlspecialchars($post['title']) ?>" required><br>
               <textarea name="content" rows="8" required><?= htmlspecialchars($post['content']) ?></textarea><br>
