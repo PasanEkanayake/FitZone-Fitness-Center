@@ -73,9 +73,11 @@
                 <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
                   <button class="btn mx-4" type="button" id="manage-posts-btn" onclick="location.href='../admin/admin-dash.php'">Manage Posts</button>
                   <button class="btn mx-4" type="button" id="logout-btn" onclick="location.href='../includes/logout.php'">Logout</button>
-                  <?php else: ?>
-                    <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./login.html'">Login</button>
-                  <?php endif; ?>
+                <?php elseif (isset($_SESSION['user_id'])): ?>
+                  <button class="btn mx-4" type="button" id="logout-btn" onclick="location.href='../includes/logout.php'">Logout</button>
+                <?php else: ?>
+                  <button class="btn mx-4" type="button" id="join-btn" onclick="location.href='./login.html'">Login</button>
+                <?php endif; ?>
               </div>
             </nav>
         </header>
