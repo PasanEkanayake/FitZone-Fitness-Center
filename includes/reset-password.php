@@ -44,7 +44,7 @@
         <link rel="stylesheet" type="text/css" href="../public/css/header.css">
         <link rel="stylesheet" type="text/css" href="../public/css/footer.css">
         <link rel="stylesheet" type="text/css" href="./reset-password.css">
-        <script src="./wellness-programs.js"></script>
+        <script src="./reset-password.js"></script>
     </head>
     <body id="group-classes-body">
         <header>
@@ -98,8 +98,14 @@
                 <div class="heading">
                     <h2>Reset Password <div class="section-underline"><span></span></h2>
                 </div>
-                <input type="password" name="new-password" placeholder="New password" required>
-                <input type="password" name="confirm-password" placeholder="Confirm password" required>
+                <div class="password-input-box">
+                  <input type="password" id="password" name="new-password" placeholder="New password" required>
+                  <img src="../public/images/eye-close.png" id="eye-icon" onclick="showPassword()">
+                </div>
+                <div class="password-input-box">
+                  <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm New password" required>
+                  <img src="../public/images/eye-close.png" id="confirm-eye-icon" onclick="showConfirmPassword()">
+                </div>
                 <button type="submit">Reset Password</button>
             </form>
         </div>

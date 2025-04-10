@@ -76,7 +76,7 @@ nav{
     width: 100%;
     flex: 1;
     padding: 3px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     border: 2px solid #0CC359;
     background-color: #1a1a1a;
@@ -92,7 +92,7 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
     background: none;
 }
@@ -101,7 +101,7 @@ nav{
     width: 100%;
     flex: 1;
     padding: 3px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     border: 2px solid #0CC359;
     background-color: #1a1a1a;
@@ -117,7 +117,7 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
     background: none;
 }
@@ -126,7 +126,7 @@ nav{
     width: 100%;
     flex: 1;
     padding: 3px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     border: 2px solid #0CC359;
     background-color: #1a1a1a;
@@ -142,7 +142,7 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
     background: none;
 }
@@ -151,7 +151,7 @@ nav{
     width: 100%;
     flex: 1;
     padding: 3px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     border: 2px solid #0CC359;
     background-color: #1a1a1a;
@@ -167,7 +167,7 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
     background: none;
 }
@@ -176,7 +176,7 @@ nav{
     width: 100%;
     flex: 1;
     padding: 3px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 10px;
     border: 2px solid #0CC359;
     background-color: #1a1a1a;
@@ -192,7 +192,7 @@ nav{
     padding: 5px 0;
     border: 0;
     outline: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
     background: none;
 }
@@ -209,14 +209,14 @@ nav{
 }
 
 .register-form p{
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 300;
     color: #FFFFFF;
     margin-top: 30px;
 }
 
 .register-form a{
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 300;
     color: #0CC359;
     margin-top: 30px;
@@ -227,7 +227,7 @@ nav{
 }
 
 .register-form p a{
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 300;
 }
 
