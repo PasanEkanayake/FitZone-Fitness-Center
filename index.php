@@ -78,7 +78,7 @@
           </nav>
         </header>
         <div class="main">
-          <section id="home-section-1">
+          <!-- <section id="home-section-1">
             <div class="raw m-0 p-0 g-0">
               <div class="col-md-6 col-sm-12">
                 <div class="home-welcome-section">
@@ -107,6 +107,19 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </section> -->
+          <section class="video-banner-section">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="./public/videos/fitzone-banner.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay-content">
+              <h1>Welcome to<br>FitZone Fitness Center</h1>
+              <h4>Your journey to fitness starts here!</h4>
+              <?php if (!isset($_SESSION['user_id'])): ?>
+                <button class="btn" id="home-join-btn" onclick="location.href='./pages/register.html'">Join Now</button>
+              <?php endif; ?>
             </div>
           </section>
           <section id="home-section-2">
