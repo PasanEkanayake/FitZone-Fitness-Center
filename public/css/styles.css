@@ -35,7 +35,7 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-#home-section-1 {
+/* #home-section-1 {
     display: flex;
     position: relative;
     flex-grow: 1;
@@ -67,6 +67,55 @@ nav {
     background-attachment: fixed;
     object-fit: contain;
     overflow: hidden;
+} */
+
+.video-banner-section {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+
+.video-banner-section {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: left;
+    padding: 150px;
+    max-width: 90%;
+}
+
+.video-overlay-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #0CC359;
+}
+
+.video-overlay-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
 .section-titles {
@@ -466,45 +515,45 @@ nav {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  #subscribeModal h4 {
-      color: #0CC359;
-  }
+#subscribeModal h4 {
+    color: #0CC359;
+}
 
 #paymentModal .modal-content {
     background: #121212;
     border: 2px solid #0CC359;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  #paymentModal .modal-header {
+#paymentModal .modal-header {
     border-bottom: none;
     padding-bottom: 0;
     text-align: center;
-  }
+}
 
-  #paymentModalLabel {
-      color: #0CC359;
-  }
+#paymentModalLabel {
+    color: #0CC359;
+}
 
-  #paymentModal .modal-title {
+#paymentModal .modal-title {
     font-weight: 600;
     font-size: 1.5rem;
-  }
+}
 
-  #paymentModal .modal-body {
+#paymentModal .modal-body {
     padding: 2rem;
-  }
+}
 
-  #paymentModal .form-label {
+#paymentModal .form-label {
     font-weight: 500;
     color: #FFFFFF;
-  }
+}
 
-  #paymentModal .form-control,
-  #paymentModal .form-select {
+#paymentModal .form-control,
+#paymentModal .form-select {
     width: 100%;
     flex: 1;
     padding: 15px 20px;
@@ -515,19 +564,19 @@ nav {
     color: #ffffff;
     min-width: 0;
     margin-top: 10px;
-  }
+}
 
-  #paymentModal .form-control::placeholder {
+#paymentModal .form-control::placeholder {
     color: #767676;
-  }
+}
 
-  #paymentModal .form-control:focus,
-  #paymentModal .form-select:focus {
+#paymentModal .form-control:focus,
+#paymentModal .form-select:focus {
     border-color: #0CC359;
     box-shadow: 0 0 0 0.2rem rgba(12, 195, 89, 0.25);
-  }
+}
 
-  #paymentModal .btn-success {
+#paymentModal .btn-success {
     padding: 15px 30px;
     font-size: 20px;
     margin-top: 20px;
@@ -538,23 +587,33 @@ nav {
     cursor: pointer;
     white-space: nowrap;
     transition: background-color 0.3s ease;
-  }
+}
 
-  #paymentModal .btn-success:hover {
+#paymentModal .btn-success:hover {
     background-color: #FFFFFF;
     color: #0CC359;
-  }
+}
 
-  #paymentModal .btn-close {
+#paymentModal .btn-close {
     filter: invert(1);
-  }
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
     #paymentModal .modal-body {
-      padding: 1.5rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
     #paymentModal .modal-dialog {
-      margin: 1rem;
+        margin: 1rem;
     }
-  }
+
+    .video-overlay-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .video-overlay-content {
+        padding: 20px;
+    }
+}
